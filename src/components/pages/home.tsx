@@ -160,7 +160,15 @@ export function HomePage({ locale }: { locale: Locale }) {
               </a>
             ))}
           </div>
-          <p className="mt-8">
+          <p className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2">
+            <span className="muted">{h.industries.more}</span>
+            {(["renovation", "electrical", "printing", "cleaning", "pest"] as const).map((k) => (
+              <a key={k} className="link" href={href(k, locale)}>
+                {c.pageNames[k]}
+              </a>
+            ))}
+          </p>
+          <p className="mt-6">
             {h.industries.other}{" "}
             <a className="link" href={href("contact", locale)}>
               {h.industries.otherLink}

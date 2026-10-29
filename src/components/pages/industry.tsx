@@ -11,14 +11,13 @@ import { ScrollFill } from "../scroll-fill";
 export function IndustryPage({ industry, locale }: { industry: IndustryKey; locale: Locale }) {
   const c = getContent(locale);
   const p = c.industry.pages[industry];
-  const card = c.home.industries.cards.find((x) => x.key === industry);
 
   return (
     <SiteShell locale={locale} page={industry}>
       {/* 1. Hero */}
       <section className="grid-bg border-b">
         <div className="wrap py-14 md:py-20">
-          {card ? <p className="eyebrow mb-4">{card.lead.replace(/\.$/, "")}</p> : null}
+          <p className="eyebrow mb-4">{c.pageNames[industry]}</p>
           <HeroTitle text={p.lead} className="h1 max-w-[860px]" />
           <p className="lede mt-6">{p.body}</p>
           <a className="btn btn-primary mt-8" href={href("pilot", locale)}>

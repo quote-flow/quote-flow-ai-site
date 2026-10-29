@@ -23,6 +23,11 @@ export const ms: Content = {
 
   // [Not in copy] short page names, used in Google's breadcrumb trail
   pageNames: {
+    renovation: "Kontraktor ubah suai",
+    electrical: "Kontraktor elektrik",
+    printing: "Percetakan dan papan tanda",
+    cleaning: "Perkhidmatan pembersihan",
+    pest: "Kawalan perosak",
     home: "Utama",
     building: "Pembekal bahan binaan dan perdagangan",
     service: "Kontraktor perkhidmatan",
@@ -71,6 +76,32 @@ export const ms: Content = {
   },
 
   meta: {
+    // [Not in copy] more industry pages, written by Claude 2026-10-29
+    renovation: {
+      title: "Perisian sebut harga untuk kontraktor ubah suai | Quotebird",
+      description:
+        "Sebut harga kerja dapur, lantai dan cat dengan tepat dalam beberapa minit, dengan pakej tersimpan, deposit dan kelulusan.",
+    },
+    electrical: {
+      title: "Perisian sebut harga untuk kontraktor elektrik | Quotebird",
+      description:
+        "Sebut harga pendawaian, soket kuasa dan kotak DB dengan tepat dalam beberapa minit, daripada kadar anda sendiri, dengan kelulusan diskaun.",
+    },
+    printing: {
+      title: "Perisian sebut harga untuk syarikat percetakan dan papan tanda | Quotebird",
+      description:
+        "Sebut harga risalah, kad nama dan papan tanda dalam beberapa minit, dengan harga ikut kuantiti digunakan secara automatik.",
+    },
+    cleaning: {
+      title: "Perisian sebut harga untuk syarikat pembersihan | Quotebird",
+      description:
+        "Sebut harga kerja pembersihan pejabat, rumah dan menyeluruh dalam beberapa minit dengan pakej tersimpan dan peraturan kelulusan diskaun kontrak.",
+    },
+    pest: {
+      title: "Perisian sebut harga untuk syarikat kawalan perosak | Quotebird",
+      description:
+        "Sebut harga rawatan sekali dan kontrak bulanan dalam beberapa minit, daripada kadar anda sendiri, dengan susulan untuk setiap sebut harga.",
+    },
     home: {
       title: "Quotebird | Perisian sebut harga untuk PKS Malaysia",
       description:
@@ -93,13 +124,11 @@ export const ms: Content = {
     },
     pricing: {
       title: "Harga | Quotebird",
-      description:
-        "Pelan dari RM 99 sebulan. Pilot percuma 3 bulan, kemudian diskaun 50% untuk tahun pertama.",
+      description: "Pelan dari RM 99 sebulan. Pilot percuma 3 bulan, kemudian diskaun 50% untuk tahun pertama.",
     },
     pilot: {
       title: "Sertai pilot percuma | Quotebird",
-      description:
-        "3 bulan percuma, kemudian diskaun 50% untuk tahun pertama. Kami sediakannya bersama anda.",
+      description: "3 bulan percuma, kemudian diskaun 50% untuk tahun pertama. Kami sediakannya bersama anda.",
     },
     security: {
       title: "Keselamatan dan privasi | Quotebird",
@@ -122,8 +151,7 @@ export const ms: Content = {
     },
     contact: {
       title: "Hubungi | Quotebird",
-      description:
-        "Hubungi Quotebird melalui WhatsApp atau e-mel. Kami membalas dalam satu hari bekerja.",
+      description: "Hubungi Quotebird melalui WhatsApp atau e-mel. Kami membalas dalam satu hari bekerja.",
     },
     privacy: {
       title: "Dasar privasi | Quotebird",
@@ -215,7 +243,10 @@ export const ms: Content = {
           body: "Harga yang dipersetujui untuk pelanggan tetap digunakan secara automatik.",
         },
         // [Not in copy] BM for the features added on 2026-10-29
-        { title: "Harga ikut kuantiti", body: "Harga lebih rendah untuk pesanan lebih besar, digunakan secara automatik." },
+        {
+          title: "Harga ikut kuantiti",
+          body: "Harga lebih rendah untuk pesanan lebih besar, digunakan secara automatik.",
+        },
         { title: "Templat sebut harga", body: "Simpan pakej standard anda dan sebut harganya dengan satu klik." },
         {
           title: "Kelulusan",
@@ -225,7 +256,10 @@ export const ms: Content = {
           title: "PDF berjenama",
           body: "Logo anda, terma anda, tempoh sah laku anda, pada setiap sebut harga.",
         },
-        { title: "Sebut harga Bahasa Malaysia", body: "Hantar sebut harga dalam Bahasa Inggeris atau Bahasa Malaysia." }, // [Not in copy]
+        {
+          title: "Sebut harga Bahasa Malaysia",
+          body: "Hantar sebut harga dalam Bahasa Inggeris atau Bahasa Malaysia.",
+        }, // [Not in copy]
         {
           title: "Hantar dan jejak",
           body: "Hantar sebut harga melalui e-mel atau kongsi pautan. Pelanggan menerima atau menolak secara dalam talian.",
@@ -287,6 +321,7 @@ export const ms: Content = {
         },
       ],
       other: "Bidang lain? Jika anda menghantar sebut harga, Quotebird sesuai untuk anda.",
+      more: "Industri lain:", // [Not in copy]
       otherLink: "Hubungi kami →",
     },
     pricingTeaser: {
@@ -354,6 +389,109 @@ export const ms: Content = {
     approvalNeeded: "Perlu kelulusan", // [Not in copy]
     columns: { line: "Item", qty: "Kuantiti", price: "Harga seunit", note: "Catatan" }, // [Not in copy]
     pages: {
+      // [Not in copy]
+      renovation: {
+        lead: "Sebut harga ubah suai yang jelas sebelum kerja pecah bermula.",
+        body: "Pemilik rumah menghantar beberapa baris di WhatsApp dan mahukan harga penuh. Quotebird menukar mesej mereka kepada sebut harga terperinci daripada kadar dan pakej anda sendiri, dan menunjukkan apa yang masih perlu diukur atau ditanya.",
+        problems: [
+          'Permintaan kabur seperti "reno dapur dan cat satu rumah"',
+          "Sebut harga dibina semula dalam Excel untuk setiap kerja",
+          "Perubahan kerja dan diskaun dipersetujui di tempat, tidak direkodkan",
+          "Deposit dan bayaran berperingkat dicatat dalam buku nota",
+        ],
+        benefits: [
+          "Menukar mesej pemilik rumah kepada item kerja yang terperinci.",
+          "Pakej tersimpan untuk kerja standard anda, disebut harga dengan satu klik.",
+          "Versi baharu untuk setiap perubahan, supaya tiada apa dipersetujui secara senyap.",
+          "Rekod deposit dan bayaran berperingkat, dan lihat baki yang belum dibayar.",
+        ],
+        notes: {
+          finish: "Kemasan kabinet dan permukaan kerja tidak dinyatakan",
+          sizes: "Saiz bilik dianggarkan: sahkan semasa lawatan tapak",
+          package: "Pakej tersimpan",
+        },
+      },
+      // [Not in copy]
+      electrical: {
+        lead: "Setiap mata, setiap kotak DB, diberi harga yang sama setiap kali.",
+        body: "Pemilik kedai dan kontraktor utama menghantar bilangan mata di WhatsApp dan mahukan harga dengan cepat. Quotebird menukar senarai itu kepada sebut harga daripada kadar anda dan menandakan butiran yang masih perlu disahkan.",
+        problems: [
+          "Bilangan mata dihantar tergesa-gesa, dengan butiran penting tertinggal",
+          "Setiap penyelia memberi harga mata yang berbeza",
+          "Kontraktor utama mengharapkan kadar yang dipersetujui",
+          "Sebut harga dihantar, kemudian dilupakan sehingga kerja terlepas",
+        ],
+        benefits: [
+          "Menukar senarai mata kepada item berharga daripada kadar anda sendiri.",
+          "Menandakan apa yang tiada, seperti bilangan litar DB atau kuasa kuda penyaman udara.",
+          "Kadar persetujuan untuk kontraktor utama, digunakan secara automatik.",
+          "Tarikh susulan untuk setiap sebut harga.",
+        ],
+        notes: { ways: "Bilangan litar tidak dinyatakan", hp: "Kuasa kuda penyaman udara tidak dinyatakan" },
+      },
+      // [Not in copy]
+      printing: {
+        lead: "Harga yang betul untuk 100 atau 10,000, tanpa mencari senarai harga.",
+        body: "Kerja cetakan datang dengan saiz, kertas dan kuantiti bercampur. Quotebird membaca permintaan itu, menggunakan harga ikut kuantiti anda dan menandakan reka bentuk atau butiran yang masih tiada.",
+        problems: [
+          "Harga bergantung pada kuantiti, saiz dan kertas, dan kakitangan tersilap",
+          "Kerja segera disebut harga sebelum butiran disemak",
+          "Diskaun pesanan pertama diberi tanpa bertanya",
+          "Tiada rekod sebut harga mana yang menjadi pesanan",
+        ],
+        benefits: [
+          "Harga ikut kuantiti digunakan secara automatik, jadi cetakan besar diberi harga yang betul.",
+          "Menandakan reka bentuk, saiz atau butiran penghantaran yang tiada.",
+          "Diskaun melebihi had anda dihantar kepada pengurus dahulu.",
+          "Papan pemuka sebut harga yang berjaya dan gagal.",
+        ],
+        notes: {
+          qty: "Harga ikut kuantiti untuk 2,000+ (dari RM 0.25)",
+          box: "Sekotak 100 keping, satu reka bentuk setiap kakitangan",
+          artwork: "Reka bentuk dan alamat pemasangan tidak diberikan",
+          discount: "Diskaun tambahan 15% pesanan pertama (ditambah oleh jurujual)",
+        },
+      },
+      // [Not in copy]
+      cleaning: {
+        lead: "Kontrak pembersihan disebut harga dalam beberapa minit, bukan selepas tiga lawatan tapak.",
+        body: "Pejabat dan pemilik rumah menerangkan ruang dan kekerapan yang mereka perlukan. Quotebird memadankannya dengan pakej dan kadar anda, dan menandakan apa yang masih perlu ditanya sebelum anda memberi harga.",
+        problems: [
+          'Setiap pertanyaan diterangkan berbeza: kaki persegi, bilik atau "satu tingkat"',
+          "Pakej bulanan ditaip semula untuk setiap pelanggan baharu",
+          "Diskaun kontrak panjang diberi tanpa pengetahuan pemilik",
+          "Tiada peringatan untuk susulan sebut harga kontrak baharu",
+        ],
+        benefits: [
+          "Pakej tersimpan untuk perkhidmatan tetap anda, disebut harga dengan satu klik.",
+          "Menandakan butiran yang tiada seperti keluasan atau kekerapan.",
+          "Diskaun kontrak melebihi had anda memerlukan kelulusan.",
+          "Hantar dalam Bahasa Inggeris atau Bahasa Malaysia.",
+        ],
+        notes: {
+          package: "Pakej tersimpan",
+          area: "Keluasan berkarpet tidak dinyatakan: dianggap seluruh pejabat",
+          discount: "Diskaun kontrak 10%, 12 bulan (ditambah oleh jurujual)",
+        },
+      },
+      // [Not in copy]
+      pest: {
+        lead: "Pelan rawatan disebut harga semasa pelanggan masih bimbang.",
+        body: "Restoran, pejabat dan pemilik rumah menghantar mesej tentang lipas, tikus atau anai-anai dan mahukan bantuan hari ini. Quotebird menukar mesej mereka kepada sebut harga rawatan daripada kadar anda sendiri, supaya anda membalas dahulu.",
+        problems: [
+          "Pelanggan menerangkan perosak, bukan rawatan yang diperlukan",
+          "Harga kontrak dikira berbeza oleh setiap juruteknik",
+          "Sebut harga kontrak bulanan yang tiada susulan",
+          "Pelanggan komersial tetap mengharapkan kadar yang dipersetujui",
+        ],
+        benefits: [
+          'Menukar "ada tikus dan lipas" kepada item rawatan yang betul.',
+          "Pelan rawatan tersimpan, disebut harga dengan satu klik.",
+          "Kadar persetujuan untuk pelanggan komersial, digunakan secara automatik.",
+          "Tarikh susulan untuk setiap sebut harga.",
+        ],
+        notes: { monthly: "Bulanan, kontrak 12 bulan", size: "Saiz premis tidak dinyatakan" },
+      },
       building: {
         lead: "Sebut harga keseluruhan senarai sebelum pesaing anda membalas.",
         body: "Kontraktor menghantar senarai barang yang panjang di WhatsApp dan mahukan harga hari ini. Quotebird menukar senarai itu kepada sebut harga daripada katalog anda dalam beberapa minit.",
@@ -433,9 +571,22 @@ export const ms: Content = {
       cta: "Sertai pilot percuma",
     },
     plans: {
-      starter: { name: "Starter", tagline: "Untuk pasukan kecil yang mahu lebih teratur", support: "E-mel dan WhatsApp" },
-      growth: { name: "Growth", tagline: "Untuk pasukan jualan yang berkembang", support: "E-mel dan WhatsApp", badge: "Paling popular" },
-      business: { name: "Business", tagline: "Untuk perniagaan sibuk dengan beberapa pasukan", support: "Sokongan keutamaan" },
+      starter: {
+        name: "Starter",
+        tagline: "Untuk pasukan kecil yang mahu lebih teratur",
+        support: "E-mel dan WhatsApp",
+      },
+      growth: {
+        name: "Growth",
+        tagline: "Untuk pasukan jualan yang berkembang",
+        support: "E-mel dan WhatsApp",
+        badge: "Paling popular",
+      },
+      business: {
+        name: "Business",
+        tagline: "Untuk perniagaan sibuk dengan beberapa pasukan",
+        support: "Sokongan keutamaan",
+      },
     },
     // [Not in copy] the BM unit and row labels below
     perMonth: "/ bulan",
@@ -500,7 +651,8 @@ export const ms: Content = {
       { value: "over_500", label: "Lebih 500" },
     ],
     consent: {
-      before: "Saya bersetuju Quotebird boleh menggunakan maklumat ini untuk menghubungi saya mengenai pilot, seperti yang diterangkan dalam ",
+      before:
+        "Saya bersetuju Quotebird boleh menggunakan maklumat ini untuk menghubungi saya mengenai pilot, seperti yang diterangkan dalam ",
       link: "Dasar privasi",
       after: ".",
     },
@@ -571,7 +723,14 @@ export const ms: Content = {
     eyebrow: "Alat percuma",
     lead: "Templat sebut harga percuma untuk perniagaan Malaysia.",
     body: "Isi di bawah dan simpan sebagai PDF. Tiada pendaftaran, dan apa yang anda taip tidak keluar dari pelayar anda.",
-    sections: { you: "Perniagaan anda", customer: "Pelanggan", details: "Butiran sebut harga", items: "Item", totals: "Jumlah", terms: "Terma dan catatan" },
+    sections: {
+      you: "Perniagaan anda",
+      customer: "Pelanggan",
+      details: "Butiran sebut harga",
+      items: "Item",
+      totals: "Jumlah",
+      terms: "Terma dan catatan",
+    },
     fields: {
       company: "Nama syarikat",
       reg: "No. pendaftaran (SSM)",
@@ -597,7 +756,8 @@ export const ms: Content = {
     },
     defaults: {
       number: "Q-0001",
-      terms: "Harga dalam Ringgit Malaysia. Bayaran dalam tempoh 30 hari dari tarikh invois. Sebut harga ini sah sehingga tarikh yang dinyatakan di atas.",
+      terms:
+        "Harga dalam Ringgit Malaysia. Bayaran dalam tempoh 30 hari dari tarikh invois. Sebut harga ini sah sehingga tarikh yang dinyatakan di atas.",
       unit: "unit",
     },
     addLine: "+ Tambah item",
@@ -610,7 +770,7 @@ export const ms: Content = {
     preparedBy: "Disediakan oleh",
     acceptance: "Diterima oleh (nama, tandatangan, tarikh)",
     print: "Simpan sebagai PDF",
-    printHint: "Dalam tetingkap cetak, pilih \"Simpan sebagai PDF\".",
+    printHint: 'Dalam tetingkap cetak, pilih "Simpan sebagai PDF".',
     csv: "Muat turun sebagai Excel (CSV)",
     clear: "Kosongkan",
     preview: "Pratonton",
@@ -627,7 +787,8 @@ export const ms: Content = {
     ],
     guideNote: "Ini panduan umum, bukan nasihat cukai atau undang-undang.",
     ctaHeading: "Menyediakan sebut harga setiap hari?",
-    ctaBody: "Quotebird menyediakan draf sebut harga untuk anda daripada mesej WhatsApp atau e-mel, menggunakan katalog dan harga anda sendiri. Pasukan anda meluluskannya dan pelanggan menerimanya secara dalam talian.",
+    ctaBody:
+      "Quotebird menyediakan draf sebut harga untuk anda daripada mesej WhatsApp atau e-mel, menggunakan katalog dan harga anda sendiri. Pasukan anda meluluskannya dan pelanggan menerimanya secara dalam talian.",
     ctaButton: "Sertai pilot percuma",
   },
 

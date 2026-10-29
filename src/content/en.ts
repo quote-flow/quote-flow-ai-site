@@ -21,6 +21,11 @@ export const en = {
 
   // [Not in copy] short page names, used in Google's breadcrumb trail
   pageNames: {
+    renovation: "Renovation contractors",
+    electrical: "Electrical contractors",
+    printing: "Printing and signage",
+    cleaning: "Cleaning services",
+    pest: "Pest control",
     home: "Home",
     building: "Building and trade suppliers",
     service: "Service contractors",
@@ -69,6 +74,31 @@ export const en = {
   },
 
   meta: {
+    // [Not in copy] more industry pages, written by Claude 2026-10-29
+    renovation: {
+      title: "Quotation software for renovation contractors | Quotebird",
+      description:
+        "Quote kitchens, flooring and painting jobs accurately in minutes, with saved packages, deposits and approvals.",
+    },
+    electrical: {
+      title: "Quotation software for electrical contractors | Quotebird",
+      description:
+        "Quote wiring, power points and DB boards accurately in minutes, from your own rates, with approvals for discounts.",
+    },
+    printing: {
+      title: "Quotation software for printing and signage companies | Quotebird",
+      description: "Quote flyers, name cards and signboards in minutes, with quantity prices applied automatically.",
+    },
+    cleaning: {
+      title: "Quotation software for cleaning companies | Quotebird",
+      description:
+        "Quote office, home and deep-cleaning jobs in minutes with saved packages and approval rules for contract discounts.",
+    },
+    pest: {
+      title: "Quotation software for pest control companies | Quotebird",
+      description:
+        "Quote one-off treatments and monthly contracts in minutes, from your own rates, with follow-ups on every quote.",
+    },
     home: {
       title: "Quotebird | Quotation software for Malaysian SMEs",
       description:
@@ -76,8 +106,7 @@ export const en = {
     },
     building: {
       title: "Quotation software for building and hardware suppliers | Quotebird",
-      description:
-        "Turn long WhatsApp item lists into accurate quotations in minutes, using your own prices.",
+      description: "Turn long WhatsApp item lists into accurate quotations in minutes, using your own prices.",
     },
     service: {
       title: "Quotation software for service contractors | Quotebird",
@@ -86,13 +115,11 @@ export const en = {
     },
     distributors: {
       title: "Quotation software for distributors and B2B suppliers | Quotebird",
-      description:
-        "Large catalogues, agreed customer prices and approval rules, applied correctly on every quotation.",
+      description: "Large catalogues, agreed customer prices and approval rules, applied correctly on every quotation.",
     },
     pricing: {
       title: "Pricing | Quotebird",
-      description:
-        "Plans from RM 99 a month. Free 3-month pilot, then 50% off your first year.",
+      description: "Plans from RM 99 a month. Free 3-month pilot, then 50% off your first year.",
     },
     pilot: {
       title: "Join the free pilot | Quotebird",
@@ -114,8 +141,7 @@ export const en = {
     },
     about: {
       title: "About | Quotebird",
-      description:
-        "Why Quotebird exists: quotations built for the way Malaysian businesses really work.",
+      description: "Why Quotebird exists: quotations built for the way Malaysian businesses really work.",
     },
     contact: {
       title: "Contact | Quotebird",
@@ -281,6 +307,7 @@ export const en = {
         },
       ],
       other: "Quote something else? If you send quotations, Quotebird works for you.",
+      more: "More industries:", // [Not in copy]
       otherLink: "Talk to us →",
     },
     pricingTeaser: {
@@ -348,6 +375,109 @@ export const en = {
     approvalNeeded: "Approval needed",
     columns: { line: "Line", qty: "Qty", price: "Unit price", note: "Note" },
     pages: {
+      // [Not in copy]
+      renovation: {
+        lead: "Renovation quotes that are clear before the hacking starts.",
+        body: "Homeowners send a few lines on WhatsApp and expect a full price. Quotebird turns their message into an itemised quotation from your own rates and packages, and shows what you still need to measure or ask.",
+        problems: [
+          'Vague requests like "reno kitchen and paint whole house"',
+          "Quotes rebuilt from scratch in Excel for every job",
+          "Variation orders and discounts agreed on the spot, never recorded",
+          "Deposits and progress payments tracked in a notebook",
+        ],
+        benefits: [
+          "Turns a homeowner's message into itemised work lines.",
+          "Saved packages for your standard jobs, quoted in one click.",
+          "A new version for every change, so nothing is agreed silently.",
+          "Record deposits and progress payments, and see what's still owed.",
+        ],
+        notes: {
+          finish: "Cabinet finish and worktop not stated",
+          sizes: "Room sizes estimated: confirm at site visit",
+          package: "Saved package",
+        },
+      },
+      // [Not in copy]
+      electrical: {
+        lead: "Every point, every DB board, priced the same way every time.",
+        body: "Shop owners and main contractors send point counts on WhatsApp and want a price fast. Quotebird turns the list into a quotation from your rates and flags the details you still need to confirm.",
+        problems: [
+          "Point counts sent in a hurry, with key details missing",
+          "Each supervisor pricing points differently",
+          "Main contractors expecting their agreed rates",
+          "Quotes sent, then forgotten until the job is gone",
+        ],
+        benefits: [
+          "Turns a point list into priced lines from your own rates.",
+          "Flags what's missing, like DB ways or aircond horsepower.",
+          "Agreed rates for main contractors, applied automatically.",
+          "A follow-up date on every quote.",
+        ],
+        notes: { ways: "Number of ways not stated", hp: "Aircond horsepower not stated" },
+      },
+      // [Not in copy]
+      printing: {
+        lead: "The right price for 100 or 10,000, without the price list hunt.",
+        body: "Print jobs come in with sizes, paper and quantities mixed together. Quotebird reads the request, applies your quantity prices and flags the artwork or details still missing.",
+        problems: [
+          "Price depends on quantity, size and paper, and staff get it wrong",
+          "Rush jobs quoted before anyone checks the details",
+          "First-order discounts given without asking",
+          "No record of which quotes turned into orders",
+        ],
+        benefits: [
+          "Quantity prices applied automatically, so big runs are priced right.",
+          "Flags missing artwork, sizes or delivery details.",
+          "Discounts above your limit go to a manager first.",
+          "A dashboard of quotes won and lost.",
+        ],
+        notes: {
+          qty: "Quantity price for 2,000+ (from RM 0.25)",
+          box: "Box of 100, one design per staff",
+          artwork: "Artwork and installation address not provided",
+          discount: "Extra 15% first-order discount (added by salesperson)",
+        },
+      },
+      // [Not in copy]
+      cleaning: {
+        lead: "Cleaning contracts quoted in minutes, not after three site visits.",
+        body: "Offices and homeowners describe the space and how often they need you. Quotebird matches it to your packages and rates, and flags what you still need to ask before you commit to a price.",
+        problems: [
+          'Every enquiry described differently: sq ft, rooms or "one floor"',
+          "Monthly packages re-typed for every new client",
+          "Long-contract discounts given without the owner knowing",
+          "No reminder to follow up on quotes for new contracts",
+        ],
+        benefits: [
+          "Saved packages for your regular services, quoted in one click.",
+          "Flags missing details like area or frequency.",
+          "Contract discounts above your limit need approval.",
+          "Send in English or Bahasa Malaysia.",
+        ],
+        notes: {
+          package: "Saved package",
+          area: "Carpeted area not stated: assumed whole office",
+          discount: "10% contract discount, 12 months (added by salesperson)",
+        },
+      },
+      // [Not in copy]
+      pest: {
+        lead: "Treatment plans quoted while the customer is still worried.",
+        body: "Restaurants, offices and homeowners message you about cockroaches, rats or termites and want help today. Quotebird turns their message into a treatment quotation from your own rates, so you reply first.",
+        problems: [
+          "Customers describe the pest, not the treatment they need",
+          "Contract prices worked out differently by each technician",
+          "Quotes for monthly contracts that nobody follows up",
+          "Repeat commercial clients expecting their agreed rates",
+        ],
+        benefits: [
+          'Turns "got rats and cockroaches" into the right treatment lines.',
+          "Saved treatment plans, quoted in one click.",
+          "Agreed rates for commercial clients, applied automatically.",
+          "A follow-up date on every quote.",
+        ],
+        notes: { monthly: "Monthly, 12-month contract", size: "Premises size not stated" },
+      },
       building: {
         lead: "Quote the whole list before your competitor replies.",
         body: "Contractors send long item lists on WhatsApp and expect a price today. Quotebird turns the list into a quotation from your catalogue in minutes.",
@@ -425,7 +555,12 @@ export const en = {
     },
     plans: {
       starter: { name: "Starter", tagline: "For small teams getting organised", support: "Email and WhatsApp" },
-      growth: { name: "Growth", tagline: "For growing sales teams", support: "Email and WhatsApp", badge: "Most popular" },
+      growth: {
+        name: "Growth",
+        tagline: "For growing sales teams",
+        support: "Email and WhatsApp",
+        badge: "Most popular",
+      },
       business: { name: "Business", tagline: "For busy, multi-team businesses", support: "Priority support" },
     },
     perMonth: "/ month",
@@ -557,7 +692,14 @@ export const en = {
     eyebrow: "Free tool",
     lead: "Free quotation template for Malaysian businesses.",
     body: "Fill it in below and save it as a PDF. No sign-up, and nothing you type leaves your browser.",
-    sections: { you: "Your business", customer: "Customer", details: "Quotation details", items: "Items", totals: "Totals", terms: "Terms and notes" },
+    sections: {
+      you: "Your business",
+      customer: "Customer",
+      details: "Quotation details",
+      items: "Items",
+      totals: "Totals",
+      terms: "Terms and notes",
+    },
     fields: {
       company: "Company name",
       reg: "Registration no. (SSM)",
@@ -583,7 +725,8 @@ export const en = {
     },
     defaults: {
       number: "Q-0001",
-      terms: "Prices are in Malaysian Ringgit. Payment within 30 days of invoice. This quotation is valid until the date shown above.",
+      terms:
+        "Prices are in Malaysian Ringgit. Payment within 30 days of invoice. This quotation is valid until the date shown above.",
       unit: "pcs",
     },
     addLine: "+ Add line",
@@ -596,7 +739,7 @@ export const en = {
     preparedBy: "Prepared by",
     acceptance: "Accepted by (name, signature, date)",
     print: "Save as PDF",
-    printHint: "In the print window, choose \"Save as PDF\".",
+    printHint: 'In the print window, choose "Save as PDF".',
     csv: "Download as Excel (CSV)",
     clear: "Clear",
     preview: "Preview",
@@ -613,7 +756,8 @@ export const en = {
     ],
     guideNote: "This is general guidance, not tax or legal advice.",
     ctaHeading: "Quoting every day?",
-    ctaBody: "Quotebird drafts the quotation for you from a WhatsApp message or email, using your own catalogue and prices. Your team approves it and the customer accepts online.",
+    ctaBody:
+      "Quotebird drafts the quotation for you from a WhatsApp message or email, using your own catalogue and prices. Your team approves it and the customer accepts online.",
     ctaButton: "Join the free pilot",
   },
 
@@ -759,9 +903,7 @@ export const en = {
       },
       {
         heading: "5. Acceptable use.",
-        paras: [
-          "Don't misuse the service, try to access other companies' data, or use it for unlawful purposes.",
-        ],
+        paras: ["Don't misuse the service, try to access other companies' data, or use it for unlawful purposes."],
       },
       {
         heading: "6. Pilot nature.",
