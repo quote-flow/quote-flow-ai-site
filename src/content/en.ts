@@ -453,6 +453,9 @@ export const en = {
       whatsapp: "Please enter a Malaysian mobile number, e.g. 012-345 6789.",
       email: "Please enter a valid email address.",
       consent: "Please tick the box so we can contact you.",
+      rateLimited: "Too many attempts from here. Please try again in an hour.",
+      closed: "Sign-ups open soon.",
+      turnstile: "We couldn't confirm you're not a robot. Please try again.", // [Not in copy]
       failed: "Something went wrong and your application wasn't sent. Please try again, or WhatsApp us.",
     },
   },

@@ -129,11 +129,11 @@ a {
   }
 }
 .section {
-  padding: 64px 0;
+  padding-block: 64px;
 }
 @media (min-width: 900px) {
   .section {
-    padding: 96px 0;
+    padding-block: 96px;
   }
 }
 .grid-bg {

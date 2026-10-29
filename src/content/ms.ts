@@ -464,6 +464,10 @@ export const ms: Content = {
       whatsapp: "Sila masukkan nombor telefon bimbit Malaysia, cth. 012-345 6789.",
       email: "Sila masukkan alamat e-mel yang sah.",
       consent: "Sila tandakan kotak ini supaya kami boleh menghubungi anda.",
+      // [Not in copy] the three messages below
+      rateLimited: "Terlalu banyak cubaan dari sini. Sila cuba lagi dalam sejam.",
+      closed: "Pendaftaran akan dibuka tidak lama lagi.",
+      turnstile: "Kami tidak dapat mengesahkan bahawa anda bukan robot. Sila cuba lagi.",
       failed: "Ada masalah dan permohonan anda tidak dihantar. Sila cuba lagi, atau WhatsApp kami.",
     },
   },

@@ -1,13 +1,28 @@
 "use client";
 
-import { useRef, useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import type { Content } from "@/content/en";
-import type { Locale } from "@/content/site";
+import { TURNSTILE_SITE_KEY, type Locale } from "@/content/site";
 import { isValidEmail, normaliseMalaysianMobile, submitPilotApplication, type PilotApplication } from "@/lib/pilot";
 
 type Field = "name" | "company" | "whatsapp" | "email" | "industry" | "quotes_per_month" | "current_method" | "consent";
 type Errors = Partial<Record<Field, string>>;
+
+type Turnstile = {
+  render: (el: HTMLElement, opts: Record<string, unknown>) => string;
+  reset: (id?: string) => void;
+};
+declare global {
+  interface Window {
+    turnstile?: Turnstile;
+    onQbTurnstileLoad?: () => void;
+  }
+}
+
+// Until the real key exists the widget is left out and the app answers 503 ("Sign-ups open soon").
+const TURNSTILE_ENABLED = !TURNSTILE_SITE_KEY.includes("PLACEHOLDER");
+const TURNSTILE_SRC = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=onQbTurnstileLoad";
 
 const ORDER: Field[] = ["name", "company", "whatsapp", "email", "industry", "quotes_per_month", "current_method", "consent"];
 
@@ -25,7 +40,39 @@ export function PilotForm({
   const router = useRouter();
   const formRef = useRef<HTMLFormElement>(null);
   const [errors, setErrors] = useState<Errors>({});
-  const [failed, setFailed] = useState(false);
+  const [alert, setAlert] = useState<string | null>(null);
+  const widgetRef = useRef<HTMLDivElement>(null);
+  const widgetId = useRef<string | undefined>(undefined);
+  const token = useRef("");
+
+  // Cloudflare Turnstile, loaded only on this page.
+  useEffect(() => {
+    if (!TURNSTILE_ENABLED) return;
+    const render = () => {
+      if (!widgetRef.current || !window.turnstile || widgetId.current) return;
+      widgetId.current = window.turnstile.render(widgetRef.current, {
+        sitekey: TURNSTILE_SITE_KEY,
+        language: locale === "ms" ? "ms" : "en",
+        callback: (t: string) => (token.current = t),
+        "expired-callback": () => (token.current = ""),
+        "error-callback": () => (token.current = ""),
+      });
+    };
+    if (window.turnstile) return render();
+    window.onQbTurnstileLoad = render;
+    if (!document.querySelector(`script[src="${TURNSTILE_SRC}"]`)) {
+      const sc = document.createElement("script");
+      sc.src = TURNSTILE_SRC;
+      sc.async = true;
+      sc.defer = true;
+      document.head.appendChild(sc);
+    }
+  }, [locale]);
+
+  function resetWidget() {
+    token.current = "";
+    if (window.turnstile && widgetId.current) window.turnstile.reset(widgetId.current);
+  }
   const [sending, setSending] = useState(false);
 
   function validate(fd: FormData): { errors: Errors; data?: PilotApplication } {
@@ -64,7 +111,7 @@ export function PilotForm({
 
   async function onSubmit(ev: FormEvent<HTMLFormElement>) {
     ev.preventDefault();
-    setFailed(false);
+    setAlert(null);
     const { errors: e, data } = validate(new FormData(ev.currentTarget));
     setErrors(e);
     if (!data) {
@@ -73,12 +120,32 @@ export function PilotForm({
       return;
     }
     setSending(true);
-    try {
-      await submitPilotApplication(data);
+    const result = await submitPilotApplication(data, token.current);
+    if (result.kind === "ok") {
       router.push(thanksHref);
-    } catch {
-      setFailed(true);
-      setSending(false);
+      return;
+    }
+    setSending(false);
+    if (result.kind === "fields") {
+      // The app's messages are English; show our own EN/BM text for each field instead.
+      const own: Record<string, string> = { whatsapp: c.errors.whatsapp, email: c.errors.email, consent: c.errors.consent };
+      const fe: Errors = {};
+      for (const f of Object.keys(result.fields)) {
+        if ((ORDER as string[]).includes(f)) fe[f as Field] = own[f] ?? c.errors.required;
+      }
+      setErrors(fe);
+      if (Object.keys(fe).length === 0) setAlert(c.errors.failed);
+      resetWidget();
+      return;
+    }
+    if (result.kind === "turnstile") {
+      resetWidget();
+      setAlert(c.errors.turnstile);
+    } else if (result.kind === "rate_limited") setAlert(c.errors.rateLimited);
+    else if (result.kind === "closed") setAlert(c.errors.closed);
+    else {
+      resetWidget();
+      setAlert(c.errors.failed); // network or unexpected: the form keeps what they typed
     }
   }
 
@@ -179,9 +246,10 @@ export function PilotForm({
         </div>
         {err("consent")}
       </div>
-      {failed ? (
+      {TURNSTILE_ENABLED ? <div ref={widgetRef} className="min-h-[65px]" /> : null}
+      {alert ? (
         <p className="form-alert" role="alert">
-          {c.errors.failed}
+          {alert}
         </p>
       ) : null}
       <button type="submit" className="btn btn-primary w-full sm:w-auto" disabled={sending}>

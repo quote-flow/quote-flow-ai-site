@@ -41,3 +41,12 @@ export const PLANS = [
   { id: "growth", monthly: 249, yearly: 2490, users: 10, quotes: 500, aiReads: 500 },
   { id: "business", monthly: 499, yearly: 4990, users: 25, quotes: 2000, aiReads: 2000 },
 ] as const;
+
+// The app that receives pilot sign-ups, and the public Turnstile site key.
+// Set at build time; see .env.example.
+export const APP_ORIGIN = process.env.NEXT_PUBLIC_APP_ORIGIN || "https://app.quotebird.ai";
+export const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "TURNSTILE_SITE_KEY_PLACEHOLDER";
+
+// Version label of the privacy policy that pilot applicants agree to. Change it whenever
+// the policy changes.
+export const PRIVACY_VERSION = "2026-10-29";
