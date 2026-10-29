@@ -4,7 +4,7 @@ import { useEffect, useRef, type ReactNode } from "react";
 import { onScrollFrame, reducedMotion } from "./scroll-progress";
 
 /** Leans its content towards the mouse in 3D and lets it drift with scroll. */
-export function Tilt({ children }: { children: ReactNode }) {
+export function Tilt({ children, drift: withDrift = true, className = "" }: { children: ReactNode; drift?: boolean; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const el = ref.current;
@@ -18,8 +18,15 @@ export function Tilt({ children }: { children: ReactNode }) {
     const onMove = (e: PointerEvent) => {
       if (e.pointerType !== "mouse") return;
       const r = el.getBoundingClientRect();
-      ry = ((e.clientX - (r.left + r.width / 2)) / r.width) * 10;
-      rx = -((e.clientY - (r.top + r.height / 2)) / r.height) * 8;
+      const dx = (e.clientX - (r.left + r.width / 2)) / r.width;
+      const dy = (e.clientY - (r.top + r.height / 2)) / r.height;
+      // Only lean while the mouse is near this element.
+      if (!withDrift && (Math.abs(dx) > 0.7 || Math.abs(dy) > 0.7)) {
+        rx = ry = 0;
+      } else {
+        ry = dx * 10;
+        rx = -dy * 8;
+      }
       apply();
     };
     const onLeave = () => {
@@ -29,7 +36,7 @@ export function Tilt({ children }: { children: ReactNode }) {
     window.addEventListener("pointermove", onMove);
     document.addEventListener("pointerleave", onLeave);
     const off = onScrollFrame(() => {
-      drift = Math.min(window.scrollY, 900) * -0.12;
+      drift = withDrift ? Math.min(window.scrollY, 900) * -0.12 : 0;
       apply();
     });
     return () => {
@@ -37,9 +44,9 @@ export function Tilt({ children }: { children: ReactNode }) {
       document.removeEventListener("pointerleave", onLeave);
       off();
     };
-  }, []);
+  }, [withDrift]);
   return (
-    <div ref={ref} className="tilt">
+    <div ref={ref} className={`tilt ${className}`}>
       {children}
     </div>
   );

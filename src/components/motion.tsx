@@ -35,7 +35,7 @@ export function Motion() {
     raf = requestAnimationFrame(tick);
 
     const els = Array.from(document.querySelectorAll<HTMLElement>(TARGETS)).filter(
-      (el) => !el.closest(".story, .reveal-pinned, .tilt"),
+      (el) => !el.closest(".story, .reveal-pinned, .tilt:not(.plan-tilt)") && !(el.tagName === "TR" && el.closest(".fill-pinned")),
     );
     for (const el of els) {
       const parent = el.parentElement;

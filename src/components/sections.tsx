@@ -3,13 +3,14 @@ import { getContent } from "@/lib/content";
 import { rich } from "@/lib/rich";
 import { href, type Locale, type RouteKey } from "@/content/site";
 import { Check } from "./icons";
+import { HeroTitle } from "./hero-title";
 
 export function PageHero({ eyebrow, lead, body, children }: { eyebrow?: string; lead: string; body?: string; children?: ReactNode }) {
   return (
     <section className="grid-bg border-b">
       <div className="wrap py-14 md:py-20">
         {eyebrow ? <p className="eyebrow mb-4">{eyebrow}</p> : null}
-        <h1 className="h1 max-w-[860px]">{rich(lead)}</h1>
+        <HeroTitle text={lead} className="h1 max-w-[860px]" />
         {body ? <p className="lede mt-5">{rich(body)}</p> : null}
         {children}
       </div>

@@ -5,6 +5,8 @@ import { SiteShell } from "../site-shell";
 import { CheckList, FinalCta } from "../sections";
 import { IndustryExample } from "../industry-example";
 import { Alert } from "../icons";
+import { HeroTitle } from "../hero-title";
+import { ScrollFill } from "../scroll-fill";
 
 export function IndustryPage({ industry, locale }: { industry: IndustryKey; locale: Locale }) {
   const c = getContent(locale);
@@ -17,7 +19,7 @@ export function IndustryPage({ industry, locale }: { industry: IndustryKey; loca
       <section className="grid-bg border-b">
         <div className="wrap py-14 md:py-20">
           {card ? <p className="eyebrow mb-4">{card.lead.replace(/\.$/, "")}</p> : null}
-          <h1 className="h1 max-w-[860px]">{p.lead}</h1>
+          <HeroTitle text={p.lead} className="h1 max-w-[860px]" />
           <p className="lede mt-6">{p.body}</p>
           <a className="btn btn-primary mt-8" href={href("pilot", locale)}>
             {c.nav.cta}
@@ -44,10 +46,12 @@ export function IndustryPage({ industry, locale }: { industry: IndustryKey; loca
 
       {/* 3. Example enquiry beside the drafted quote */}
       <section className="border-b">
-        <div className="wrap section">
-          <h2 className="h2 mb-10">{c.industry.exampleHeading}</h2>
-          <IndustryExample industry={industry} locale={locale} />
-        </div>
+        <ScrollFill>
+          <div className="wrap section">
+            <h2 className="h2 mb-10">{c.industry.exampleHeading}</h2>
+            <IndustryExample industry={industry} locale={locale} />
+          </div>
+        </ScrollFill>
       </section>
 
       {/* 4. Benefits */}

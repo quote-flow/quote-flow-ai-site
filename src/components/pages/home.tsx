@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import { getContent } from "@/lib/content";
 import { rich } from "@/lib/rich";
 import { href, PLANS, SITE_URL, type Locale } from "@/content/site";
@@ -9,6 +8,7 @@ import { Arrow, FeatureIcon } from "../icons";
 import { StoryScroll } from "../story-scroll";
 import { WordReveal } from "../word-reveal";
 import { Tilt } from "../tilt";
+import { HeroTitle } from "../hero-title";
 
 function StructuredData({ locale }: { locale: Locale }) {
   const c = getContent(locale);
@@ -51,15 +51,7 @@ export function HomePage({ locale }: { locale: Locale }) {
       <section className="grid-bg border-b">
         <div className="wrap grid gap-12 py-14 md:py-20 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:items-center">
           <div>
-            <h1 className="h1 hero-title">
-              {h.hero.headline.split(" ").map((w, i) => (
-                <Fragment key={i}>
-                  <span className="word" style={{ ["--i" as string]: i }}>
-                    {w}
-                  </span>{" "}
-                </Fragment>
-              ))}
-            </h1>
+            <HeroTitle text={h.hero.headline} />
             <p className="lede mt-6">{rich(h.hero.subline)}</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a className="btn btn-primary" href={href("pilot", locale)}>

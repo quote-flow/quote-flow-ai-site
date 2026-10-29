@@ -1291,3 +1291,94 @@ body {
     right: 10px;
   }
 }
+
+/* Industry pages: pinned example, quote fills in with scroll */
+.fill-pinned {
+  height: 230vh;
+}
+.fill-pinned .fill-sticky {
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+}
+.fill-pinned .fill-sticky > .wrap {
+  padding-block: 88px 32px;
+}
+.fill-pinned .quote-table tbody tr {
+  opacity: 0;
+  transform: translateX(-18px);
+  transition:
+    opacity 0.45s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.fill-pinned .quote-table tbody tr.in {
+  opacity: 1;
+  transform: none;
+}
+.fill-pinned tr.in .flag,
+.fill-pinned tr.in .badge-approval {
+  animation: pop 0.5s cubic-bezier(0.3, 1.6, 0.5, 1) 0.2s both;
+}
+.fill-pinned tr.in .badge-approval {
+  animation:
+    pop 0.5s cubic-bezier(0.3, 1.6, 0.5, 1) 0.2s both,
+    pulse-red 1.8s ease-in-out 0.8s infinite;
+}
+@keyframes pulse-red {
+  50% {
+    box-shadow: 0 0 0 6px #f3c2bb66;
+  }
+}
+@media (max-width: 1023px) {
+  .fill-pinned {
+    height: auto;
+  }
+  .fill-pinned .fill-sticky {
+    position: static;
+    min-height: 0;
+  }
+  .fill-pinned .fill-sticky > .wrap {
+    padding-block: 64px;
+  }
+}
+
+/* Pricing: popular plan glows, cards lean towards the mouse */
+.plan-tilt {
+  height: 100%;
+}
+.plan-popular {
+  position: relative;
+}
+.plan-popular::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 14px;
+  padding: 2px;
+  background: conic-gradient(from var(--angle, 0deg), var(--primary), var(--cyan), #138399, var(--primary));
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: spin-border 6s linear infinite;
+  pointer-events: none;
+}
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+@keyframes spin-border {
+  to {
+    --angle: 360deg;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .plan-popular::before {
+    animation: none;
+  }
+}
