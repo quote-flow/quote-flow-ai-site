@@ -41,16 +41,22 @@ export const Mail = ({ size = 20, className }: P) => (
   </svg>
 );
 
+// In the same order as home.features.items in the content files.
 const featurePaths: string[] = [
   "M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20", // catalogue
-  "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8", // customers
+  "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8", // customer prices
+  "M3 3v18h18M7 14l4-4 4 4 5-5", // quantity prices
+  "M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3M7 8h10M7 12h10M7 16h6", // templates
   "M9 12l2 2 4-4M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0", // approvals
   "M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7ZM14 2v4a2 2 0 0 0 2 2h4M10 9H8M16 13H8M16 17H8", // pdf
+  "M5 8l6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6", // languages
   "M22 2 11 13M22 2l-7 20-4-9-9-4Z", // send
   "M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z", // follow-ups
   "M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8M3 3v5h5M12 7v5l4 2", // history
   "M18 21a8 8 0 0 0-16 0M10 13a5 5 0 1 0 0-10 5 5 0 0 0 0 10M22 20c0-3.4-2-6.5-4-8a5 5 0 0 0-.45-8.3", // roles
   "M3 3v16a2 2 0 0 0 2 2h16M18 17V9M13 17V5M8 17v-3", // dashboard
+  "M2 7h20v12H2ZM2 11h20M6 15h4", // payments
+  "M12 3l1.9 5.8L20 10l-6.1 1.2L12 17l-1.9-5.8L4 10l6.1-1.2ZM19 3v4M21 5h-4", // AI insights
   "M7 11V7a5 5 0 0 1 10 0v4M5 11h14a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2Z", // sign-in
 ];
 export const FeatureIcon = ({ index, size = 20 }: { index: number; size?: number }) => (

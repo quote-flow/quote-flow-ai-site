@@ -19,9 +19,27 @@ export const en = {
     home: "Quotebird home", // [Not in copy] screen-reader label for the logo
   },
 
+  // [Not in copy] short page names, used in Google's breadcrumb trail
+  pageNames: {
+    home: "Home",
+    building: "Building and trade suppliers",
+    service: "Service contractors",
+    distributors: "Distributors",
+    pricing: "Pricing",
+    pilot: "Join the free pilot",
+    thanks: "Thank you",
+    security: "Security",
+    about: "About",
+    contact: "Contact",
+    privacy: "Privacy policy",
+    terms: "Terms of use",
+    template: "Free quotation template",
+  },
+
   footer: {
     tagline: "Quotebird: quotations for Malaysian businesses.",
     links: {
+      template: "Free quotation template",
       pricing: "Pricing",
       security: "Security",
       about: "About",
@@ -82,6 +100,11 @@ export const en = {
       title: "Security and privacy | Quotebird",
       description: "How Quotebird protects your prices, customers and quotations.",
     },
+    template: {
+      title: "Free quotation template for Malaysia (PDF) | Quotebird",
+      description:
+        "Fill in a professional quotation online and save it as a PDF or Excel file. Free, no sign-up. Includes SST, validity and payment terms.",
+    },
     // [Not in copy] meta for the pages below
     thanks: {
       title: "Thank you | Quotebird",
@@ -110,6 +133,7 @@ export const en = {
     hero: {
       headline: "Every enquiry, quoted in minutes.",
       subline:
+        // [CONFIRM] photos of handwritten lists: keep until the AI is tested on real photos.
         "Paste a WhatsApp message, an email or a photo of a list. Quotebird drafts the quotation from *your* catalogue at *your* prices. Your team checks it, approves it, and the customer accepts online.",
       primary: "Join the free pilot",
       secondary: "See how it works",
@@ -120,6 +144,7 @@ export const en = {
       points: [
         {
           lead: "Enquiries everywhere.",
+          // [CONFIRM] photos of handwritten lists: keep until the AI is tested on real photos.
           body: "WhatsApp, email, phone photos of handwritten lists. Someone has to read every one and type it out again.",
         },
         {
@@ -183,6 +208,8 @@ export const en = {
           title: "Customer prices",
           body: "Agreed prices for regular customers are applied automatically.",
         },
+        { title: "Quantity prices", body: "Lower prices for bigger orders, applied automatically." },
+        { title: "Quotation templates", body: "Save your standard packages and quote them in one click." },
         {
           title: "Approvals",
           body: "Set a discount limit. Anything above it goes to a manager first.",
@@ -191,6 +218,7 @@ export const en = {
           title: "Branded PDF",
           body: "Your logo, your terms, your validity period, on every quotation.",
         },
+        { title: "Bahasa Malaysia quotations", body: "Send quotations in English or Bahasa Malaysia." },
         {
           title: "Send and track",
           body: "Email the quote or share a link. The customer accepts or declines online.",
@@ -208,6 +236,11 @@ export const en = {
           title: "Dashboard",
           body: "Quotes waiting for approval, sent, won and lost, at a glance.",
         },
+        { title: "Payment tracking", body: "Record deposits and payments, and see what's still owed." },
+        {
+          title: "AI sales insights",
+          body: "One click explains your win rate, losses and what to do next, from your own figures.",
+        },
         { title: "Secure sign-in", body: "Two-step sign-in for owners and admins." },
       ],
     },
@@ -223,7 +256,6 @@ export const en = {
           lead: "Online payment.",
           body: "Customers pay a deposit or in full by FPX, DuitNow or card, straight into your own account.",
         },
-        { lead: "AI sales insights.", body: "One click to see why you're winning or losing." },
         { lead: "Accounting export.", body: "Send records to your accounting software." },
       ],
     },
@@ -263,6 +295,7 @@ export const en = {
         },
         {
           q: "What kinds of enquiries can it read?",
+          // [CONFIRM] photos of handwritten lists: keep until the AI is tested on real photos.
           a: "Text copied from WhatsApp or email, PDF files, and photos or screenshots (JPG or PNG), including photos of handwritten lists. It works best in English and Bahasa Malaysia. We're testing Chinese and mixed-language messages with our pilot companies.",
         },
         {
@@ -320,6 +353,7 @@ export const en = {
           "40-item lists typed out by hand, line by line",
           'Item names that never match your catalogue ("4 inch pipe" vs "PVC Pipe Class D 100mm")',
           "Different staff quoting different prices",
+          // [CONFIRM] photos of handwritten lists: keep until the AI is tested on real photos.
           "Photos of handwritten lists from site",
         ],
         benefits: [
@@ -514,6 +548,71 @@ export const en = {
       },
       { lead: "Questions?", body: "Email {{EMAIL}}." },
     ],
+  },
+
+  // [Not in copy] Free quotation template page, written by Claude for review.
+  template: {
+    eyebrow: "Free tool",
+    lead: "Free quotation template for Malaysian businesses.",
+    body: "Fill it in below and save it as a PDF. No sign-up, and nothing you type leaves your browser.",
+    sections: { you: "Your business", customer: "Customer", details: "Quotation details", items: "Items", totals: "Totals", terms: "Terms and notes" },
+    fields: {
+      company: "Company name",
+      reg: "Registration no. (SSM)",
+      address: "Address",
+      phone: "Phone",
+      email: "Email",
+      sst: "SST registration no. (if registered)",
+      customer: "Customer name",
+      customerAddress: "Customer address",
+      attention: "Attention",
+      number: "Quotation no.",
+      date: "Date",
+      validUntil: "Valid until",
+      description: "Description",
+      qty: "Qty",
+      unit: "Unit",
+      price: "Unit price (RM)",
+      amount: "Amount (RM)",
+      discount: "Discount (RM)",
+      taxRate: "Tax rate (%)",
+      taxHint: "Only if you're SST-registered. Use the rate that applies to your goods or services.",
+      terms: "Terms",
+    },
+    defaults: {
+      number: "Q-0001",
+      terms: "Prices are in Malaysian Ringgit. Payment within 30 days of invoice. This quotation is valid until the date shown above.",
+      unit: "pcs",
+    },
+    addLine: "+ Add line",
+    removeLine: "Remove line",
+    subtotal: "Subtotal",
+    tax: "Tax",
+    total: "Total",
+    docTitle: "QUOTATION",
+    to: "To",
+    preparedBy: "Prepared by",
+    acceptance: "Accepted by (name, signature, date)",
+    print: "Save as PDF",
+    printHint: "In the print window, choose \"Save as PDF\".",
+    csv: "Download as Excel (CSV)",
+    clear: "Clear",
+    preview: "Preview",
+    guideHeading: "What a Malaysian quotation should include",
+    guide: [
+      "Your business name, SSM registration number and contact details",
+      "Your SST registration number, if you're registered",
+      "A quotation number and the date",
+      "How long the prices are valid",
+      "The customer's name and address",
+      "Each item with its quantity, unit and price",
+      "Any discount, the tax and the total in RM",
+      "Payment and delivery terms",
+    ],
+    guideNote: "This is general guidance, not tax or legal advice.",
+    ctaHeading: "Quoting every day?",
+    ctaBody: "Quotebird drafts the quotation for you from a WhatsApp message or email, using your own catalogue and prices. Your team approves it and the customer accepts online.",
+    ctaButton: "Join the free pilot",
   },
 
   about: {

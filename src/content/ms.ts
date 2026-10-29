@@ -21,9 +21,27 @@ export const ms: Content = {
     home: "Laman utama Quotebird", // [Not in copy]
   },
 
+  // [Not in copy] short page names, used in Google's breadcrumb trail
+  pageNames: {
+    home: "Utama",
+    building: "Pembekal bahan binaan dan perdagangan",
+    service: "Kontraktor perkhidmatan",
+    distributors: "Pengedar",
+    pricing: "Harga",
+    pilot: "Sertai pilot percuma",
+    thanks: "Terima kasih",
+    security: "Keselamatan",
+    about: "Tentang kami",
+    contact: "Hubungi",
+    privacy: "Dasar privasi",
+    terms: "Terma penggunaan",
+    template: "Templat sebut harga percuma",
+  },
+
   footer: {
     tagline: "Quotebird: sebut harga untuk perniagaan Malaysia.",
     links: {
+      template: "Templat sebut harga percuma",
       pricing: "Harga",
       security: "Keselamatan",
       about: "Tentang kami",
@@ -85,6 +103,11 @@ export const ms: Content = {
       title: "Keselamatan dan privasi | Quotebird",
       description: "Cara Quotebird melindungi harga, pelanggan dan sebut harga anda.",
     },
+    template: {
+      title: "Templat sebut harga percuma (PDF) | Quotebird",
+      description:
+        "Isi sebut harga yang profesional secara dalam talian dan simpan sebagai PDF atau Excel. Percuma, tanpa pendaftaran. Termasuk SST, tempoh sah dan terma bayaran.",
+    },
     // [Not in copy] meta for the pages below
     thanks: {
       title: "Terima kasih | Quotebird",
@@ -114,6 +137,7 @@ export const ms: Content = {
     hero: {
       headline: "Setiap pertanyaan, siap disebut harga dalam beberapa minit.",
       subline:
+        // [CONFIRM] photos of handwritten lists: keep until the AI is tested on real photos.
         "Tampal mesej WhatsApp, e-mel atau gambar senarai barang. Quotebird menyediakan draf sebut harga daripada katalog *anda* pada harga *anda*. Pasukan anda menyemak dan meluluskannya, dan pelanggan menerimanya secara dalam talian.",
       primary: "Sertai pilot percuma",
       secondary: "Lihat cara ia berfungsi",
@@ -124,6 +148,7 @@ export const ms: Content = {
       points: [
         {
           lead: "Pertanyaan datang dari mana-mana.",
+          // [CONFIRM] photos of handwritten lists: keep until the AI is tested on real photos.
           body: "WhatsApp, e-mel, gambar senarai tulisan tangan. Seseorang perlu membaca setiap satu dan menaipnya semula.",
         },
         {
@@ -187,6 +212,9 @@ export const ms: Content = {
           title: "Harga pelanggan",
           body: "Harga yang dipersetujui untuk pelanggan tetap digunakan secara automatik.",
         },
+        // [Not in copy] BM for the features added on 2026-10-29
+        { title: "Harga ikut kuantiti", body: "Harga lebih rendah untuk pesanan lebih besar, digunakan secara automatik." },
+        { title: "Templat sebut harga", body: "Simpan pakej standard anda dan sebut harganya dengan satu klik." },
         {
           title: "Kelulusan",
           body: "Tetapkan had diskaun. Apa-apa yang melebihinya akan dihantar kepada pengurus dahulu.",
@@ -195,6 +223,7 @@ export const ms: Content = {
           title: "PDF berjenama",
           body: "Logo anda, terma anda, tempoh sah laku anda, pada setiap sebut harga.",
         },
+        { title: "Sebut harga Bahasa Malaysia", body: "Hantar sebut harga dalam Bahasa Inggeris atau Bahasa Malaysia." }, // [Not in copy]
         {
           title: "Hantar dan jejak",
           body: "Hantar sebut harga melalui e-mel atau kongsi pautan. Pelanggan menerima atau menolak secara dalam talian.",
@@ -212,6 +241,12 @@ export const ms: Content = {
           title: "Papan pemuka",
           body: "Sebut harga menunggu kelulusan, dihantar, berjaya dan gagal, sekali pandang.",
         },
+        // [Not in copy] BM for the features added on 2026-10-29
+        { title: "Jejak pembayaran", body: "Rekod deposit dan bayaran, dan lihat baki yang belum dibayar." },
+        {
+          title: "Analisis jualan AI",
+          body: "Satu klik menerangkan kadar kejayaan, kerugian dan langkah seterusnya, berdasarkan angka anda sendiri.",
+        },
         { title: "Log masuk selamat", body: "Log masuk dua langkah untuk pemilik dan pentadbir." },
       ],
     },
@@ -227,7 +262,6 @@ export const ms: Content = {
           lead: "Pembayaran dalam talian.",
           body: "Pelanggan membayar deposit atau penuh melalui FPX, DuitNow atau kad, terus ke akaun anda sendiri.",
         },
-        { lead: "Analisis jualan AI.", body: "Satu klik untuk melihat mengapa anda berjaya atau gagal." },
         { lead: "Eksport ke perakaunan.", body: "Hantar rekod ke perisian perakaunan anda." },
       ],
     },
@@ -267,6 +301,7 @@ export const ms: Content = {
         },
         {
           q: "Jenis pertanyaan apa yang boleh dibaca?",
+          // [CONFIRM] photos of handwritten lists: keep until the AI is tested on real photos.
           a: "Teks yang disalin daripada WhatsApp atau e-mel, fail PDF, dan gambar atau tangkapan skrin (JPG atau PNG), termasuk gambar senarai tulisan tangan. Ia paling baik dalam Bahasa Inggeris dan Bahasa Malaysia. Kami sedang menguji mesej bahasa Cina dan bahasa campuran bersama syarikat pilot kami.",
         },
         {
@@ -324,6 +359,7 @@ export const ms: Content = {
           "Senarai 40 barang ditaip satu demi satu",
           'Nama barang yang tidak sama dengan katalog ("paip 4 inci" lawan "PVC Pipe Class D 100mm")',
           "Kakitangan berbeza memberi harga berbeza",
+          // [CONFIRM] photos of handwritten lists: keep until the AI is tested on real photos.
           "Gambar senarai tulisan tangan dari tapak",
         ],
         benefits: [
@@ -526,6 +562,71 @@ export const ms: Content = {
       },
       { lead: "Ada soalan?", body: "E-mel {{EMAIL}}." },
     ],
+  },
+
+  // [Not in copy] Free quotation template page, written by Claude for review.
+  template: {
+    eyebrow: "Alat percuma",
+    lead: "Templat sebut harga percuma untuk perniagaan Malaysia.",
+    body: "Isi di bawah dan simpan sebagai PDF. Tiada pendaftaran, dan apa yang anda taip tidak keluar dari pelayar anda.",
+    sections: { you: "Perniagaan anda", customer: "Pelanggan", details: "Butiran sebut harga", items: "Item", totals: "Jumlah", terms: "Terma dan catatan" },
+    fields: {
+      company: "Nama syarikat",
+      reg: "No. pendaftaran (SSM)",
+      address: "Alamat",
+      phone: "Telefon",
+      email: "E-mel",
+      sst: "No. pendaftaran SST (jika berdaftar)",
+      customer: "Nama pelanggan",
+      customerAddress: "Alamat pelanggan",
+      attention: "Untuk perhatian",
+      number: "No. sebut harga",
+      date: "Tarikh",
+      validUntil: "Sah sehingga",
+      description: "Keterangan",
+      qty: "Kuantiti",
+      unit: "Unit",
+      price: "Harga seunit (RM)",
+      amount: "Amaun (RM)",
+      discount: "Diskaun (RM)",
+      taxRate: "Kadar cukai (%)",
+      taxHint: "Hanya jika anda berdaftar SST. Gunakan kadar yang berkenaan dengan barang atau perkhidmatan anda.",
+      terms: "Terma",
+    },
+    defaults: {
+      number: "Q-0001",
+      terms: "Harga dalam Ringgit Malaysia. Bayaran dalam tempoh 30 hari dari tarikh invois. Sebut harga ini sah sehingga tarikh yang dinyatakan di atas.",
+      unit: "unit",
+    },
+    addLine: "+ Tambah item",
+    removeLine: "Buang item",
+    subtotal: "Jumlah kecil",
+    tax: "Cukai",
+    total: "Jumlah",
+    docTitle: "SEBUT HARGA",
+    to: "Kepada",
+    preparedBy: "Disediakan oleh",
+    acceptance: "Diterima oleh (nama, tandatangan, tarikh)",
+    print: "Simpan sebagai PDF",
+    printHint: "Dalam tetingkap cetak, pilih \"Simpan sebagai PDF\".",
+    csv: "Muat turun sebagai Excel (CSV)",
+    clear: "Kosongkan",
+    preview: "Pratonton",
+    guideHeading: "Apa yang perlu ada dalam sebut harga di Malaysia",
+    guide: [
+      "Nama perniagaan, nombor pendaftaran SSM dan maklumat hubungan anda",
+      "Nombor pendaftaran SST anda, jika berdaftar",
+      "Nombor sebut harga dan tarikh",
+      "Tempoh harga sah",
+      "Nama dan alamat pelanggan",
+      "Setiap item dengan kuantiti, unit dan harga",
+      "Diskaun, cukai dan jumlah dalam RM",
+      "Terma pembayaran dan penghantaran",
+    ],
+    guideNote: "Ini panduan umum, bukan nasihat cukai atau undang-undang.",
+    ctaHeading: "Menyediakan sebut harga setiap hari?",
+    ctaBody: "Quotebird menyediakan draf sebut harga untuk anda daripada mesej WhatsApp atau e-mel, menggunakan katalog dan harga anda sendiri. Pasukan anda meluluskannya dan pelanggan menerimanya secara dalam talian.",
+    ctaButton: "Sertai pilot percuma",
   },
 
   about: {

@@ -4,6 +4,7 @@ import { EMAIL, href, PILOT_FORM_ENABLED, whatsappHref, type Locale } from "@/co
 import { SiteShell } from "../site-shell";
 import { CheckList, PageHero } from "../sections";
 import { PilotForm } from "../pilot-form";
+import { QuoteTemplate } from "../quote-template";
 import { Mail, Shield, WhatsAppGlyph } from "../icons";
 
 export function PilotPage({ locale }: { locale: Locale }) {
@@ -191,6 +192,40 @@ export function LegalPage({ locale, doc }: { locale: Locale; doc: "privacy" | "t
             ))}
             {c.contact ? <p className="mt-8">{rich(c.contact)}</p> : null}
           </article>
+        </div>
+      </section>
+    </SiteShell>
+  );
+}
+
+export function TemplatePage({ locale }: { locale: Locale }) {
+  const c = getContent(locale).template;
+  return (
+    <SiteShell locale={locale} page="template">
+      <div className="no-print">
+        <PageHero eyebrow={c.eyebrow} lead={c.lead} body={c.body} />
+      </div>
+      <section>
+        <div className="wrap section">
+          <QuoteTemplate c={c} />
+        </div>
+      </section>
+      <section className="white no-print border-t">
+        <div className="wrap section grid gap-10 md:grid-cols-[1fr_1.3fr]">
+          <div>
+            <h2 className="h2">{c.guideHeading}</h2>
+            <p className="small muted mt-4">{c.guideNote}</p>
+          </div>
+          <CheckList items={c.guide} />
+        </div>
+      </section>
+      <section className="dark grid-dark no-print">
+        <div className="wrap section text-center">
+          <h2 className="h2 mx-auto max-w-[720px]">{c.ctaHeading}</h2>
+          <p className="lede mx-auto mt-4">{c.ctaBody}</p>
+          <a className="btn btn-primary mt-8" href={href("pilot", locale)}>
+            {c.ctaButton}
+          </a>
         </div>
       </section>
     </SiteShell>

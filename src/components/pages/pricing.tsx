@@ -4,6 +4,7 @@ import { href, type Locale } from "@/content/site";
 import { SiteShell } from "../site-shell";
 import { Faq, PageHero } from "../sections";
 import { PricingPlans } from "../pricing-plans";
+import { faqPage, JsonLd } from "@/lib/schema";
 
 export function PricingPage({ locale }: { locale: Locale }) {
   const c = getContent(locale);
@@ -12,6 +13,7 @@ export function PricingPage({ locale }: { locale: Locale }) {
 
   return (
     <SiteShell locale={locale} page="pricing">
+      <JsonLd data={faqPage(p.faq)} />
       <PageHero lead={p.lead} body={p.body}>
         <div className="panel mt-8 flex flex-col gap-4 border-l-4 p-5 sm:flex-row sm:items-center sm:justify-between" style={{ borderLeftColor: "var(--primary)" }}>
           <p>

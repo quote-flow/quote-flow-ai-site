@@ -1382,3 +1382,188 @@ body {
     animation: none;
   }
 }
+
+/* Free quotation template */
+fieldset.panel {
+  margin: 0;
+  min-width: 0;
+}
+.tpl-line {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 12px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fafdfd;
+}
+.tpl-desc {
+  grid-column: 1 / -1;
+}
+.tpl-amount {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--mono);
+  font-weight: 600;
+}
+@media (min-width: 640px) {
+  .tpl-line {
+    grid-template-columns: 1fr 0.6fr 0.6fr 0.9fr;
+  }
+}
+.tpl-remove {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 20px;
+  cursor: pointer;
+}
+.tpl-remove:hover {
+  background: #fdecea;
+  color: #a8261b;
+}
+.quote-doc {
+  background: #fff;
+  color: #111;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  box-shadow: 0 20px 50px #10354914;
+  padding: 32px;
+  font-size: 13px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.doc-company {
+  font-size: 18px;
+  font-weight: 700;
+}
+.doc-title {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--primary);
+}
+.doc-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #555;
+}
+.doc-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.doc-table th {
+  text-align: left;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-bottom: 2px solid #111;
+  padding: 6px 6px;
+}
+.doc-table td {
+  padding: 7px 6px;
+  border-bottom: 1px solid #e5e5e5;
+  vertical-align: top;
+}
+.doc-table .r {
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.doc-totals {
+  margin: 12px 0 0 auto;
+  max-width: 280px;
+}
+.doc-totals div {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 6px;
+}
+.doc-totals dd {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+.doc-totals .grand {
+  border-top: 2px solid #111;
+  margin-top: 4px;
+  padding-top: 8px;
+  font-weight: 800;
+  font-size: 15px;
+}
+.doc-sign {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 48px;
+}
+.doc-sign span {
+  display: block;
+  border-bottom: 1px solid #111;
+  height: 40px;
+}
+.doc-sign p {
+  font-size: 11px;
+  color: #555;
+  margin-top: 6px;
+}
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm;
+  }
+  body {
+    background: #fff !important;
+  }
+  body * {
+    visibility: hidden;
+  }
+  .print-area,
+  .print-area * {
+    visibility: visible;
+  }
+  .print-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    border: 0;
+    box-shadow: none;
+    padding: 0;
+  }
+  .pilot-banner,
+  .site-header,
+  .wa-float,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+}
+.doc-scroll {
+  overflow-x: auto;
+}
+@media (max-width: 639px) {
+  .quote-doc {
+    padding: 18px;
+    font-size: 12px;
+  }
+  .doc-sign {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+@media print {
+  .doc-scroll {
+    overflow: visible;
+  }
+}

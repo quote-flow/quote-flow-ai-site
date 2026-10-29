@@ -6,6 +6,7 @@ import { Wordmark } from "./logo";
 import { Menu, WhatsAppGlyph } from "./icons";
 import { PilotBannerDismiss } from "./pilot-banner";
 import { Motion } from "./motion";
+import { breadcrumb, JsonLd } from "@/lib/schema";
 
 export function SiteShell({ locale, page, children }: { locale: Locale; page: RouteKey; children: ReactNode }) {
   const c = getContent(locale);
@@ -88,6 +89,7 @@ export function SiteShell({ locale, page, children }: { locale: Locale; page: Ro
         <div id="scroll-progress" aria-hidden="true" />
       </header>
 
+      {page !== "home" ? <JsonLd data={breadcrumb(page, locale)} /> : null}
       <main id="main">{children}</main>
       <Motion />
 
@@ -101,7 +103,7 @@ export function SiteShell({ locale, page, children }: { locale: Locale; page: Ro
           </div>
           <div className="space-y-6">
             <ul className="flex flex-wrap gap-x-6 gap-y-3" style={{ listStyle: "none" }}>
-              {(["pricing", "security", "about", "contact", "privacy", "terms"] as const).map((k) => (
+              {(["pricing", "template", "security", "about", "contact", "privacy", "terms"] as const).map((k) => (
                 <li key={k}>
                   <a className="hover:text-white" style={{ color: "var(--ink-text)" }} href={href(k, locale)}>
                     {c.footer.links[k]}

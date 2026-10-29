@@ -9,6 +9,7 @@ import { StoryScroll } from "../story-scroll";
 import { WordReveal } from "../word-reveal";
 import { Tilt } from "../tilt";
 import { HeroTitle } from "../hero-title";
+import { faqPage, JsonLd, organization } from "@/lib/schema";
 
 function StructuredData({ locale }: { locale: Locale }) {
   const c = getContent(locale);
@@ -46,6 +47,8 @@ export function HomePage({ locale }: { locale: Locale }) {
   return (
     <SiteShell locale={locale} page="home">
       <StructuredData locale={locale} />
+      <JsonLd data={organization(locale)} />
+      <JsonLd data={faqPage(h.faq.items)} />
 
       {/* Hero */}
       <section className="grid-bg border-b">

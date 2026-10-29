@@ -23,6 +23,7 @@ export const routes = {
   contact: { en: "/contact/", ms: "/ms/hubungi/" },
   privacy: { en: "/privacy/", ms: "/ms/privasi/" },
   terms: { en: "/terms/", ms: "/ms/terma/" },
+  template: { en: "/quotation-template/", ms: "/ms/templat-sebut-harga/" },
 } as const;
 
 export type RouteKey = keyof typeof routes;
