@@ -18,22 +18,7 @@ export function ogImage(headline: string, sub: string) {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
-          <div
-            style={{
-              width: 64,
-              height: 64,
-              borderRadius: 16,
-              background: "linear-gradient(145deg, #138399, #075466)",
-              border: "2px solid #5edce7",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: 36,
-              fontWeight: 800,
-            }}
-          >
-            Q
-          </div>
+          <svg width="64" height="64" viewBox="0 0 48 48"><rect width="48" height="48" rx="12" fill="#0c758a" /><circle cx="23" cy="24" r="11" fill="none" stroke="#fff" strokeWidth="5.5" /><path d="M29 30 39 36 33 26Z" fill="#71e8ec" /><circle cx="26.5" cy="20.5" r="2.2" fill="#fff" /></svg>
           <div style={{ display: "flex", fontSize: 44, fontWeight: 800, letterSpacing: -1.5 }}>
             Quote<span style={{ color: "#71e8ec" }}>bird</span>
           </div>
