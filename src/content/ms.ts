@@ -157,6 +157,15 @@ export const ms: Content = {
         },
       ],
     },
+    // [Not in copy] labels inside the animated "How it works" pictures
+    story: {
+      newMessage: "Mesej baharu",
+      reading: "Membaca pertanyaan…",
+      matched: "Dipadankan dengan katalog anda",
+      approved: "Diluluskan",
+      accepted: "Diterima oleh pelanggan",
+      quoteNo: "Sebut harga Q-0142",
+    },
     trust: {
       heading: "AI tidak sekali-kali menetapkan harga anda.",
       body: "AI Quotebird hanya membaca pertanyaan. Itu sahaja. Setiap harga datang daripada katalog anda sendiri, atau daripada kakitangan yang dibenarkan mengubahnya. Jumlah, diskaun dan cukai dikira dengan tepat oleh sistem, bukan diteka oleh AI. Diskaun yang melebihi had anda perlu diluluskan oleh pengurus sebelum pelanggan melihatnya.",

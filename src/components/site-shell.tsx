@@ -5,6 +5,7 @@ import { EMAIL, href, routes, whatsappHref, type Locale, type RouteKey } from "@
 import { Wordmark } from "./logo";
 import { Menu, WhatsAppGlyph } from "./icons";
 import { PilotBannerDismiss } from "./pilot-banner";
+import { Motion } from "./motion";
 
 export function SiteShell({ locale, page, children }: { locale: Locale; page: RouteKey; children: ReactNode }) {
   const c = getContent(locale);
@@ -84,9 +85,11 @@ export function SiteShell({ locale, page, children }: { locale: Locale; page: Ro
             </details>
           </div>
         </div>
+        <div id="scroll-progress" aria-hidden="true" />
       </header>
 
       <main id="main">{children}</main>
+      <Motion />
 
       <footer className="dark">
         <div className="wrap grid gap-8 py-12 md:grid-cols-[1.2fr_2fr]">

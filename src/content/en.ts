@@ -153,6 +153,15 @@ export const en = {
         },
       ],
     },
+    // [Not in copy] labels inside the animated "How it works" pictures
+    story: {
+      newMessage: "New message",
+      reading: "Reading the enquiry…",
+      matched: "Matched to your catalogue",
+      approved: "Approved",
+      accepted: "Accepted by customer",
+      quoteNo: "Quotation Q-0142",
+    },
     trust: {
       heading: "AI never sets your prices.",
       body: "Quotebird's AI reads the enquiry. That's all it does. Every price comes from your own catalogue, or from someone in your team who is allowed to change it. Totals, discounts and tax are calculated exactly by the system, never guessed by AI. Discounts above your limit wait for a manager's approval before the customer sees them.",

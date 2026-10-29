@@ -1,10 +1,14 @@
+import { Fragment } from "react";
 import { getContent } from "@/lib/content";
 import { rich } from "@/lib/rich";
 import { href, PLANS, SITE_URL, type Locale } from "@/content/site";
 import { SiteShell } from "../site-shell";
 import { Faq, FinalCta } from "../sections";
 import { IndustryExample } from "../industry-example";
-import { Arrow, FeatureIcon, Shield } from "../icons";
+import { Arrow, FeatureIcon } from "../icons";
+import { StoryScroll } from "../story-scroll";
+import { WordReveal } from "../word-reveal";
+import { Tilt } from "../tilt";
 
 function StructuredData({ locale }: { locale: Locale }) {
   const c = getContent(locale);
@@ -47,7 +51,15 @@ export function HomePage({ locale }: { locale: Locale }) {
       <section className="grid-bg border-b">
         <div className="wrap grid gap-12 py-14 md:py-20 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:items-center">
           <div>
-            <h1 className="h1">{h.hero.headline}</h1>
+            <h1 className="h1 hero-title">
+              {h.hero.headline.split(" ").map((w, i) => (
+                <Fragment key={i}>
+                  <span className="word" style={{ ["--i" as string]: i }}>
+                    {w}
+                  </span>{" "}
+                </Fragment>
+              ))}
+            </h1>
             <p className="lede mt-6">{rich(h.hero.subline)}</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a className="btn btn-primary" href={href("pilot", locale)}>
@@ -60,7 +72,9 @@ export function HomePage({ locale }: { locale: Locale }) {
             <p className="small muted mt-4">{h.hero.smallPrint}</p>
           </div>
           <div className="lg:pl-4">
-            <IndustryExample industry="building" locale={locale} compact />
+            <Tilt>
+              <IndustryExample industry="building" locale={locale} compact />
+            </Tilt>
           </div>
         </div>
       </section>
@@ -80,45 +94,20 @@ export function HomePage({ locale }: { locale: Locale }) {
         </div>
       </section>
 
-      {/* How it works */}
+      {/* How it works: pinned, scroll-driven story */}
       <section id="how-it-works" className="border-b">
-        <div className="wrap section">
-          <h2 className="h2 max-w-[760px]">{h.howItWorks.heading}</h2>
-          <ol className="mt-10 grid gap-5 md:grid-cols-3" style={{ listStyle: "none" }}>
-            {h.howItWorks.steps.map((s, i) => (
-              <li key={s.lead} className="panel p-6">
-                <span className="step-num">{i + 1}</span>
-                <h3 className="h3 mt-4">{s.lead}</h3>
-                <p className="muted mt-2">{s.body}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
+        <StoryScroll
+          heading={h.howItWorks.heading}
+          steps={h.howItWorks.steps}
+          story={h.story}
+          notes={c.industry.pages.building.notes}
+          columns={c.industry.columns}
+        />
       </section>
 
-      {/* Trust block */}
-      <section className="dark grid-dark">
-        <div className="wrap section grid gap-10 lg:grid-cols-[1.3fr_1fr] lg:items-center">
-          <div>
-            <span className="icon-tile mb-6">
-              <Shield />
-            </span>
-            <h2 className="h2">{h.trust.heading}</h2>
-            <p className="lede mt-5">{h.trust.body}</p>
-          </div>
-          <ul className="space-y-3" style={{ listStyle: "none" }}>
-            {h.trust.points.map((p) => (
-              <li
-                key={p}
-                className="flex items-center gap-3 rounded-xl border px-5 py-4"
-                style={{ borderColor: "#397181", background: "#102f3f" }}
-              >
-                <span style={{ color: "var(--cyan)" }}>✓</span>
-                <span style={{ color: "#e4eef5", fontWeight: 600 }}>{p}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
+      {/* Trust block: words light up as you scroll */}
+      <section>
+        <WordReveal heading={h.trust.heading} body={h.trust.body} points={h.trust.points} />
       </section>
 
       {/* Features */}
