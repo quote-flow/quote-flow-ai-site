@@ -27,6 +27,9 @@ services:
       # Real key from the Cloudflare account; until then sign-ups show "Sign-ups open soon".
       - key: NEXT_PUBLIC_TURNSTILE_SITE_KEY
         value: TURNSTILE_SITE_KEY_PLACEHOLDER
+      # Turn on once app.quotebird.ai is live; until then the pilot page shows a WhatsApp button.
+      - key: NEXT_PUBLIC_PILOT_FORM
+        value: "off"
       # Cloudflare Web Analytics token; empty = analytics off.
       - key: NEXT_PUBLIC_CF_BEACON_TOKEN
         value: ""

@@ -50,3 +50,7 @@ export const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || 
 // Version label of the privacy policy that pilot applicants agree to. Change it whenever
 // the policy changes.
 export const PRIVACY_VERSION = "2026-10-29";
+
+// The pilot form needs the app's sign-up endpoint. Until the app is live, the pilot page
+// shows a WhatsApp button instead. Set NEXT_PUBLIC_PILOT_FORM=on to show the form.
+export const PILOT_FORM_ENABLED = process.env.NEXT_PUBLIC_PILOT_FORM === "on";

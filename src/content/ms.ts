@@ -457,6 +457,14 @@ export const ms: Content = {
       link: "Dasar privasi",
       after: ".",
     },
+    // [Not in copy] shown instead of the form while the app is not live
+    whatsappApply: {
+      heading: "Mohon melalui WhatsApp",
+      body: "Hantar mesej kepada kami dan kami akan sediakan pilot anda bersama anda.",
+      button: "Sembang di WhatsApp",
+      message: "Hai Quotebird, saya ingin menyertai pilot percuma.",
+      email: "Atau e-mel kami di {{EMAIL}}.",
+    },
     submit: "Mohon untuk pilot",
     sending: "Menghantar…", // [Not in copy]
     errors: {

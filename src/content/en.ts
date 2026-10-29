@@ -446,6 +446,14 @@ export const en = {
       link: "Privacy policy",
       after: ".",
     },
+    // [Not in copy] shown instead of the form while the app is not live
+    whatsappApply: {
+      heading: "Apply on WhatsApp",
+      body: "Send us a message and we'll set up your pilot with you.",
+      button: "Chat on WhatsApp",
+      message: "Hi Quotebird, I'd like to join the free pilot.",
+      email: "Or email us at {{EMAIL}}.",
+    },
     submit: "Apply for the pilot",
     sending: "Sending…", // [Not in copy]
     errors: {

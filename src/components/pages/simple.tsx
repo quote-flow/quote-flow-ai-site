@@ -1,6 +1,6 @@
 import { getContent } from "@/lib/content";
 import { rich } from "@/lib/rich";
-import { EMAIL, href, whatsappHref, type Locale } from "@/content/site";
+import { EMAIL, href, PILOT_FORM_ENABLED, whatsappHref, type Locale } from "@/content/site";
 import { SiteShell } from "../site-shell";
 import { CheckList, PageHero } from "../sections";
 import { PilotForm } from "../pilot-form";
@@ -22,7 +22,27 @@ export function PilotPage({ locale }: { locale: Locale }) {
             <CheckList items={p.get} className="mt-4" />
           </div>
           <div className="panel p-6 md:p-8">
-            <PilotForm c={p} locale={locale} privacyHref={href("privacy", locale)} thanksHref={href("thanks", locale)} />
+            {PILOT_FORM_ENABLED ? (
+              <PilotForm c={p} locale={locale} privacyHref={href("privacy", locale)} thanksHref={href("thanks", locale)} />
+            ) : (
+              <div className="py-4 text-center">
+                <span className="icon-tile mx-auto" style={{ width: 56, height: 56, borderRadius: 999, color: "#1fa855" }}>
+                  <WhatsAppGlyph size={28} />
+                </span>
+                <h2 className="h2 mt-5">{p.whatsappApply.heading}</h2>
+                <p className="lede mx-auto mt-3">{p.whatsappApply.body}</p>
+                <a
+                  className="btn mt-7 w-full sm:w-auto"
+                  style={{ background: "#1fa855", color: "#fff" }}
+                  href={whatsappHref(p.whatsappApply.message)}
+                  rel="noopener"
+                >
+                  <WhatsAppGlyph size={20} />
+                  {p.whatsappApply.button}
+                </a>
+                <p className="muted mt-5">{rich(p.whatsappApply.email)}</p>
+              </div>
+            )}
           </div>
         </div>
       </section>
