@@ -24,6 +24,7 @@ export const routes = {
   privacy: { en: "/privacy/", ms: "/ms/privasi/" },
   terms: { en: "/terms/", ms: "/ms/terma/" },
   template: { en: "/quotation-template/", ms: "/ms/templat-sebut-harga/" },
+  articles: { en: "/articles/", ms: "/ms/artikel/" },
 } as const;
 
 export type RouteKey = keyof typeof routes;

@@ -36,11 +36,13 @@ export const ms: Content = {
     privacy: "Dasar privasi",
     terms: "Terma penggunaan",
     template: "Templat sebut harga percuma",
+    articles: "Artikel",
   },
 
   footer: {
     tagline: "Quotebird: sebut harga untuk perniagaan Malaysia.",
     links: {
+      articles: "Artikel", // [Not in copy]
       template: "Templat sebut harga percuma",
       pricing: "Harga",
       security: "Keselamatan",

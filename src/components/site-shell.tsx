@@ -8,7 +8,18 @@ import { PilotBannerDismiss } from "./pilot-banner";
 import { Motion } from "./motion";
 import { breadcrumb, JsonLd } from "@/lib/schema";
 
-export function SiteShell({ locale, page, children }: { locale: Locale; page: RouteKey; children: ReactNode }) {
+export function SiteShell({
+  locale,
+  page,
+  altHref,
+  children,
+}: {
+  locale: Locale;
+  page: RouteKey;
+  /** The same page in the other language, when it is not a fixed route (articles). */
+  altHref?: string;
+  children: ReactNode;
+}) {
   const c = getContent(locale);
   const other: Locale = locale === "en" ? "ms" : "en";
   const home = href("home", locale);
@@ -22,7 +33,7 @@ export function SiteShell({ locale, page, children }: { locale: Locale; page: Ro
   const langSwitch = (
     <a
       className="lang"
-      href={routes[page][other]}
+      href={altHref ?? routes[page][other]}
       hrefLang={other === "ms" ? "ms-MY" : "en-MY"}
       lang={other}
       aria-label={c.langSwitch.name}
@@ -103,7 +114,7 @@ export function SiteShell({ locale, page, children }: { locale: Locale; page: Ro
           </div>
           <div className="space-y-6">
             <ul className="flex flex-wrap gap-x-6 gap-y-3" style={{ listStyle: "none" }}>
-              {(["pricing", "template", "security", "about", "contact", "privacy", "terms"] as const).map((k) => (
+              {(["pricing", "template", "articles", "security", "about", "contact", "privacy", "terms"] as const).map((k) => (
                 <li key={k}>
                   <a className="hover:text-white" style={{ color: "var(--ink-text)" }} href={href(k, locale)}>
                     {c.footer.links[k]}

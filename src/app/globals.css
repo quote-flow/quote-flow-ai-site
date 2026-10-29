@@ -1567,3 +1567,28 @@ fieldset.panel {
     overflow: visible;
   }
 }
+
+/* Articles */
+.prose-article h2 {
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 680;
+  letter-spacing: -0.02em;
+  margin: 44px 0 12px;
+}
+.prose-article p {
+  color: #2d4757;
+  font-size: 17px;
+  line-height: 1.75;
+}
+.prose-article p + p {
+  margin-top: 14px;
+}
+.prose-article .lede {
+  font-size: 20px;
+  color: #3c5566;
+}
+.prose-article .check-list li {
+  font-size: 17px;
+  color: #2d4757;
+}

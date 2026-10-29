@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { routes, SITE_URL, type RouteKey } from "@/content/site";
+import { articlePath, articles } from "@/content/articles";
 
 export const dynamic = "force-static";
 
@@ -17,5 +18,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
           languages: { "en-MY": `${SITE_URL}${routes[k].en}`, "ms-MY": `${SITE_URL}${routes[k].ms}` },
         },
       })),
+    )
+    .concat(
+      articles.flatMap((a) =>
+        (["en", "ms"] as const).map((loc) => ({
+          url: `${SITE_URL}${articlePath(a, loc)}`,
+          changeFrequency: "monthly" as const,
+          priority: 0.7,
+          alternates: {
+            languages: { "en-MY": `${SITE_URL}${articlePath(a, "en")}`, "ms-MY": `${SITE_URL}${articlePath(a, "ms")}` },
+          },
+        })),
+      ),
     );
 }

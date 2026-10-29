@@ -34,11 +34,13 @@ export const en = {
     privacy: "Privacy policy",
     terms: "Terms of use",
     template: "Free quotation template",
+    articles: "Articles",
   },
 
   footer: {
     tagline: "Quotebird: quotations for Malaysian businesses.",
     links: {
+      articles: "Articles", // [Not in copy]
       template: "Free quotation template",
       pricing: "Pricing",
       security: "Security",
