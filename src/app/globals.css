@@ -1,0 +1,851 @@
+@import "tailwindcss";
+
+/* Tokens copied from the app (quoteflow-ui/src/styles/globals.css) so the site and the
+   product read as one brand. */
+:root {
+  --background: #eff4f7;
+  --foreground: #142d3b;
+  --primary: #096d81;
+  --primary-hover: #075466;
+  --primary-foreground: #fff;
+  --border: #d7e3ea;
+  --radius: 0.75rem;
+  --muted: #586e7e;
+  --ink: #0a1c29; /* app sidebar */
+  --ink-2: #152e3e;
+  --ink-line: #213746;
+  --ink-text: #c0d0db;
+  --cyan: #71e8ec;
+  --cyan-soft: #9cf2f3;
+  --blue-50: #edf9fb;
+  --blue-100: #cfedf2;
+  --flag-bg: #fff6d6;
+  --flag-line: #f0d27a;
+  --flag-text: #7a5a00;
+  --wa-bg: #e7f6e1;
+  --wa-chat: #efe9e0;
+  --mono: ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-ink: var(--ink);
+}
+
+* {
+  border-color: var(--border);
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+:focus-visible {
+  outline: 3px solid #0a8299;
+  outline-offset: 3px;
+}
+@layer base {
+  h1,
+  h2,
+  h3,
+  p,
+  ul,
+  ol {
+    margin: 0;
+  }
+  ul,
+  ol {
+    padding: 0;
+  }
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.skip-link {
+  position: fixed;
+  top: -60px;
+  left: 16px;
+  z-index: 100;
+  padding: 12px;
+  background: white;
+  border-radius: 8px;
+}
+.skip-link:focus {
+  top: 10px;
+}
+
+/* Placeholders such as {{EMAIL}} are shown as written, lightly marked so they are easy to
+   find before launch. */
+.ph {
+  font-family: var(--mono);
+  font-size: 0.88em;
+  background: var(--flag-bg);
+  color: var(--flag-text);
+  border-radius: 4px;
+  padding: 0 3px;
+  overflow-wrap: anywhere;
+}
+
+/* Layout */
+.wrap {
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding-inline: 16px;
+}
+@media (min-width: 768px) {
+  .wrap {
+    padding-inline: 32px;
+  }
+}
+.section {
+  padding: 64px 0;
+}
+@media (min-width: 900px) {
+  .section {
+    padding: 96px 0;
+  }
+}
+.grid-bg {
+  background-image:
+    radial-gradient(ellipse at 92% 0%, #64d9df1f, transparent 42%), linear-gradient(#bacfd52b 1px, transparent 1px),
+    linear-gradient(90deg, #bacfd52b 1px, transparent 1px);
+  background-size:
+    auto,
+    28px 28px,
+    28px 28px;
+}
+.white {
+  background: #fff;
+}
+.dark {
+  background: var(--ink);
+  color: #e4eef5;
+}
+
+/* Type */
+.eyebrow {
+  font-family: var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--primary);
+}
+.dark .eyebrow {
+  color: var(--cyan);
+}
+.h1 {
+  font-size: clamp(34px, 7vw, 58px);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  font-weight: 700;
+  text-wrap: balance;
+}
+.h2 {
+  font-size: clamp(26px, 4.4vw, 38px);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  font-weight: 680;
+  text-wrap: balance;
+}
+.h3 {
+  font-size: 18px;
+  line-height: 1.35;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+.lede {
+  font-size: clamp(17px, 2.2vw, 20px);
+  color: #3c5566;
+  max-width: 640px;
+}
+.dark .lede {
+  color: var(--ink-text);
+}
+.muted {
+  color: var(--muted);
+}
+.small {
+  font-size: 14px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-weight: 650;
+  font-size: 16px;
+  border: 1px solid transparent;
+  transition:
+    background-color 0.15s,
+    border-color 0.15s,
+    color 0.15s;
+  cursor: pointer;
+  text-align: center;
+}
+.btn-primary {
+  background: var(--primary);
+  color: var(--primary-foreground);
+  box-shadow: 0 6px 18px #096d8130;
+}
+.btn-primary:hover {
+  background: var(--primary-hover);
+}
+.btn-secondary {
+  background: #fff;
+  border-color: var(--border);
+  color: var(--foreground);
+}
+.btn-secondary:hover {
+  border-color: #9fbccb;
+}
+.dark .btn-secondary {
+  background: transparent;
+  border-color: #397181;
+  color: var(--cyan-soft);
+}
+.btn-sm {
+  min-height: 40px;
+  padding: 8px 14px;
+  font-size: 14px;
+}
+.link {
+  color: var(--primary);
+  font-weight: 600;
+}
+.link:hover {
+  text-decoration: underline;
+}
+.dark .link {
+  color: var(--cyan-soft);
+}
+
+/* Cards (the app's .panel) */
+.panel {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow:
+    0 2px 4px #10354905,
+    0 10px 30px #10354908;
+}
+.panel-heading {
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(100deg, #fafdfd, #f2f7fa);
+  border-radius: 12px 12px 0 0;
+}
+.label {
+  font-family: var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #475569;
+}
+
+/* Pilot banner */
+.pilot-banner {
+  background: var(--ink);
+  color: #e4eef5;
+  font-size: 14px;
+}
+.pilot-banner a {
+  color: var(--cyan-soft);
+  font-weight: 650;
+  white-space: nowrap;
+}
+.pilot-banner button {
+  background: none;
+  border: 0;
+  color: var(--ink-text);
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 20px;
+  line-height: 1;
+  flex: none;
+}
+.pilot-banner button:hover {
+  background: var(--ink-2);
+}
+
+/* Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: #ffffffed;
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-link {
+  font-size: 15px;
+  font-weight: 550;
+  color: #2d4757;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+.nav-link:hover {
+  background: var(--blue-50);
+  color: var(--primary);
+}
+.lang {
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 13px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  min-width: 44px;
+  min-height: 40px;
+  display: inline-grid;
+  place-items: center;
+  color: var(--primary);
+}
+.lang:hover {
+  border-color: #9fbccb;
+}
+.mobile-menu > summary {
+  list-style: none;
+  cursor: pointer;
+}
+.mobile-menu > summary::-webkit-details-marker {
+  display: none;
+}
+.mobile-menu[open] .menu-sheet {
+  display: block;
+}
+.menu-sheet {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 16px 30px #102a431a;
+  padding: 8px 16px 20px;
+}
+.menu-sheet a.nav-link {
+  display: block;
+  padding: 14px 8px;
+  font-size: 17px;
+  border-bottom: 1px solid #eef2f6;
+  border-radius: 0;
+}
+
+/* Feature and list blocks */
+.icon-tile {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background: var(--blue-50);
+  color: var(--primary);
+  border: 1px solid var(--blue-100);
+  flex: none;
+}
+.dark .icon-tile {
+  background: linear-gradient(145deg, #1d5366, #0b293c);
+  color: #a5f5f5;
+  border-color: #5edce775;
+}
+.step-num {
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--primary);
+  border: 1px solid var(--blue-100);
+  background: var(--blue-50);
+  border-radius: 999px;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+}
+.check-list li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.check-list svg {
+  flex: none;
+  margin-top: 3px;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 650;
+  border-radius: 999px;
+  padding: 3px 10px;
+  white-space: nowrap;
+}
+.badge-soon {
+  font-family: var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-size: 10.5px;
+  background: var(--ink-2);
+  color: var(--cyan-soft);
+  border: 1px solid #397181;
+}
+.badge-approval {
+  background: #fdecea;
+  color: #9b2c1f;
+  border: 1px solid #f3c2bb;
+}
+.badge-popular {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* FAQ */
+.faq details {
+  border-bottom: 1px solid var(--border);
+}
+.faq summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 20px 0;
+  font-weight: 620;
+  font-size: 17px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+.faq summary::after {
+  content: "+";
+  font-family: var(--mono);
+  color: var(--primary);
+  font-size: 22px;
+  line-height: 1;
+}
+.faq details[open] summary::after {
+  content: "−";
+}
+.faq .answer {
+  padding: 0 0 22px;
+  color: #3c5566;
+  max-width: 720px;
+}
+
+/* Example enquiry: WhatsApp bubble */
+.wa {
+  background: var(--wa-chat);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #ddd3c4;
+}
+.wa-top {
+  background: #075e54;
+  color: #fff;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 14px;
+}
+.wa-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: #cfd8dc;
+  color: #455a64;
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+}
+.wa-bubble {
+  position: relative;
+  background: #fff;
+  border-radius: 0 10px 10px 10px;
+  padding: 10px 12px 18px;
+  margin: 16px 40px 20px 22px;
+  box-shadow: 0 1px 1px #0000001a;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.wa-bubble::before {
+  content: "";
+  position: absolute;
+  left: -8px;
+  top: 0;
+  border-top: 10px solid #fff;
+  border-left: 8px solid transparent;
+}
+.wa-time {
+  position: absolute;
+  right: 10px;
+  bottom: 4px;
+  font-size: 11px;
+  color: #8696a0;
+}
+
+/* Example enquiry: email card */
+.mail-row {
+  display: flex;
+  gap: 10px;
+  padding: 8px 18px;
+  border-bottom: 1px solid #eef2f6;
+  font-size: 14px;
+}
+.mail-row .label {
+  min-width: 64px;
+  padding-top: 2px;
+}
+
+/* Drafted quote table */
+.quote-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.quote-table th {
+  text-align: left;
+  font-family: var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #475569;
+  background: #f2f7f9;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+}
+.quote-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #eef2f6;
+  vertical-align: top;
+}
+.quote-table tr:last-child td {
+  border-bottom: 0;
+}
+.quote-table .num {
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.quote-table th.num,
+.quote-table td.num {
+  text-align: right;
+}
+.flag {
+  display: inline-flex;
+  gap: 6px;
+  align-items: flex-start;
+  background: var(--flag-bg);
+  border: 1px solid var(--flag-line);
+  color: var(--flag-text);
+  border-radius: 6px;
+  padding: 3px 8px;
+  font-size: 13px;
+  font-weight: 550;
+  line-height: 1.4;
+}
+tr.flag-row td {
+  background: #fffbea;
+}
+tr.approval-row td {
+  background: #fff7f6;
+}
+/* On phones the quote table turns into stacked cards, like the app's mobile record cards. */
+@media (max-width: 639px) {
+  .quote-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+  .quote-table tr {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4px 12px;
+    padding: 12px 14px;
+    border-bottom: 1px solid #eef2f6;
+  }
+  .quote-table tr:last-child {
+    border-bottom: 0;
+  }
+  .quote-table td {
+    display: block;
+    padding: 0;
+    border: 0;
+    background: transparent !important;
+  }
+  .quote-table td.item {
+    grid-column: 1 / -1;
+    font-weight: 600;
+  }
+  .quote-table td.num {
+    text-align: left;
+  }
+  .quote-table td.unit {
+    text-align: right;
+  }
+  .quote-table td.note:empty {
+    display: none;
+  }
+  .quote-table td.note {
+    grid-column: 1 / -1;
+  }
+  .quote-table tr.flag-row {
+    background: #fffbea;
+  }
+  .quote-table tr.approval-row {
+    background: #fff7f6;
+  }
+}
+
+/* Pricing */
+.toggle {
+  display: inline-flex;
+  padding: 4px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  gap: 4px;
+}
+.toggle button {
+  border: 0;
+  background: transparent;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: #3c5566;
+  min-height: 44px;
+  cursor: pointer;
+}
+.toggle button[aria-pressed="true"] {
+  background: var(--primary);
+  color: #fff;
+}
+.price {
+  font-family: var(--mono);
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: -1.5px;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+.plan-popular {
+  border: 2px solid var(--primary);
+  box-shadow: 0 20px 50px #096d8122;
+}
+.plan-rows div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #eef2f6;
+  font-size: 15px;
+}
+.plan-rows dd {
+  margin: 0;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+/* Forms (the app's .form-grid look) */
+.field label,
+.field .field-label {
+  display: block;
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="tel"],
+.field select,
+.field textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 11px 14px;
+  border: 1px solid #c3d4de;
+  border-radius: 10px;
+  background: #fff;
+  font: inherit;
+  color: var(--foreground);
+}
+.field textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: 3px solid #0a829955;
+  border-color: var(--primary);
+}
+.field [aria-invalid="true"] {
+  border-color: #c0392b;
+}
+.field-error {
+  color: #a8261b;
+  font-size: 14px;
+  margin-top: 6px;
+  font-weight: 550;
+}
+.consent {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 15px;
+}
+.consent input {
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+  accent-color: var(--primary);
+  flex: none;
+}
+.form-alert {
+  background: #fdecea;
+  border: 1px solid #f3c2bb;
+  color: #8b2016;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+/* Legal pages */
+.prose-legal h2 {
+  font-size: 18px;
+  font-weight: 650;
+  margin: 32px 0 8px;
+}
+.prose-legal p,
+.prose-legal li {
+  color: #2d4757;
+}
+.prose-legal p + p {
+  margin-top: 12px;
+}
+.prose-legal ul {
+  list-style: disc;
+  padding-left: 22px;
+  margin: 8px 0 12px;
+}
+.prose-legal li + li {
+  margin-top: 6px;
+}
+
+/* Floating WhatsApp button */
+.wa-float {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 50;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #1fa855;
+  color: #fff;
+  font-weight: 650;
+  font-size: 15px;
+  border-radius: 999px;
+  padding: 12px 16px;
+  min-height: 52px;
+  box-shadow: 0 10px 26px #0b3d2240;
+}
+.wa-float:hover {
+  background: #178a45;
+}
+@media (max-width: 639px) {
+  .wa-float span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+  .wa-float {
+    padding: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    transition: none !important;
+  }
+}
+.no-banner .pilot-banner {
+  display: none;
+}
+.grid-dark {
+  background-image:
+    radial-gradient(ellipse at 85% 0%, #25d3e322, transparent 45%), linear-gradient(#ffffff08 1px, transparent 1px),
+    linear-gradient(90deg, #ffffff08 1px, transparent 1px);
+  background-size:
+    auto,
+    28px 28px,
+    28px 28px;
+}
+@media (max-width: 639px) {
+  .quote-table td:empty {
+    display: none;
+  }
+}
+.compact .wa-bubble {
+  margin: 12px 32px 14px 20px;
+}
+.compact .quote-table td {
+  padding: 9px 12px;
+}
+.compact .quote-table th {
+  padding: 8px 12px;
+}
