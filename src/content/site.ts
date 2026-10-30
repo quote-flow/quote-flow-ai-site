@@ -2,7 +2,7 @@
 // page exactly as written, so it is easy to spot before launch.
 
 export const SITE_URL = "https://quote-bird.com";
-export const WHATSAPP_NUMBER = "{{WHATSAPP_NUMBER}}";
+export const WHATSAPP_NUMBER = "+60 12-895 8842";
 export const EMAIL = "hello@quote-bird.com";
 export const OPERATOR_NAME = "{{OPERATOR_NAME}}";
 export const PILOT_SLOTS_LEFT = "{{PILOT_SLOTS_LEFT}}";

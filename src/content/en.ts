@@ -774,7 +774,7 @@ export const en = {
   contact: {
     lead: "Talk to us.",
     body: "The fastest way to reach us is WhatsApp. We reply within one working day.",
-    whatsapp: { label: "WhatsApp:", value: "{{WHATSAPP_NUMBER}}", button: "Chat on WhatsApp" },
+    whatsapp: { label: "WhatsApp:", value: "+60 12-895 8842", button: "Chat on WhatsApp" },
     email: { label: "Email:", value: "hello@quote-bird.com" },
     pilot: { label: "Want to try it?", button: "Join the free pilot" },
   },

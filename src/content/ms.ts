@@ -805,7 +805,7 @@ export const ms: Content = {
   contact: {
     lead: "Hubungi kami.",
     body: "Cara paling pantas untuk menghubungi kami ialah WhatsApp. Kami membalas dalam satu hari bekerja.",
-    whatsapp: { label: "WhatsApp:", value: "{{WHATSAPP_NUMBER}}", button: "Sembang di WhatsApp" },
+    whatsapp: { label: "WhatsApp:", value: "+60 12-895 8842", button: "Sembang di WhatsApp" },
     email: { label: "E-mel:", value: "hello@quote-bird.com" },
     pilot: { label: "Mahu mencuba?", button: "Sertai pilot percuma" },
   },
