@@ -3,7 +3,7 @@
 
 export const SITE_URL = "https://quote-bird.com";
 export const WHATSAPP_NUMBER = "{{WHATSAPP_NUMBER}}";
-export const EMAIL = "{{EMAIL}}";
+export const EMAIL = "hello@quote-bird.com";
 export const OPERATOR_NAME = "{{OPERATOR_NAME}}";
 export const PILOT_SLOTS_LEFT = "{{PILOT_SLOTS_LEFT}}";
 

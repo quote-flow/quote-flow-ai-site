@@ -632,7 +632,7 @@ export const en = {
       body: "Send us a message and we'll set up your pilot with you.",
       button: "Chat on WhatsApp",
       message: "Hi Quotebird, I'd like to join the free pilot.",
-      email: "Or email us at {{EMAIL}}.",
+      email: "Or email us at hello@quote-bird.com.",
     },
     submit: "Apply for the pilot",
     sending: "Sending…", // [Not in copy]
@@ -683,7 +683,7 @@ export const en = {
         // [CONFIRM at go-live] hosting region.
         body: "Hosted on secured cloud infrastructure in {{DATA_REGION}}, encrypted in transit.",
       },
-      { lead: "Questions?", body: "Email {{EMAIL}}." },
+      { lead: "Questions?", body: "Email hello@quote-bird.com." },
     ],
   },
 
@@ -775,7 +775,7 @@ export const en = {
     lead: "Talk to us.",
     body: "The fastest way to reach us is WhatsApp. We reply within one working day.",
     whatsapp: { label: "WhatsApp:", value: "{{WHATSAPP_NUMBER}}", button: "Chat on WhatsApp" },
-    email: { label: "Email:", value: "{{EMAIL}}" },
+    email: { label: "Email:", value: "hello@quote-bird.com" },
     pilot: { label: "Want to try it?", button: "Join the free pilot" },
   },
 
@@ -792,7 +792,7 @@ export const en = {
     sections: [
       {
         heading: "1. Who we are.",
-        paras: ["Quotebird is operated by {{OPERATOR_NAME}}, {{OPERATOR_ADDRESS}}. Contact: {{EMAIL}}."],
+        paras: ["Quotebird is operated by {{OPERATOR_NAME}}, {{OPERATOR_ADDRESS}}. Contact: hello@quote-bird.com."],
       },
       {
         heading: "2. What we collect.",
@@ -849,7 +849,7 @@ export const en = {
           "limit how we use it, for example for marketing",
           "ask us to transfer it to you in a usable format, where the law provides",
         ],
-        after: ["Email {{EMAIL}}. We will respond within the time the law requires."],
+        after: ["Email hello@quote-bird.com. We will respond within the time the law requires."],
       },
       {
         heading: "8. Security.",
@@ -919,7 +919,7 @@ export const en = {
       },
       { heading: "8. Law.", paras: ["These terms are governed by the laws of Malaysia."] },
     ],
-    contact: "Contact: {{EMAIL}}.",
+    contact: "Contact: hello@quote-bird.com.",
   },
 };
 

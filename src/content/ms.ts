@@ -662,7 +662,7 @@ export const ms: Content = {
       body: "Hantar mesej kepada kami dan kami akan sediakan pilot anda bersama anda.",
       button: "Sembang di WhatsApp",
       message: "Hai Quotebird, saya ingin menyertai pilot percuma.",
-      email: "Atau e-mel kami di {{EMAIL}}.",
+      email: "Atau e-mel kami di hello@quote-bird.com.",
     },
     submit: "Mohon untuk pilot",
     sending: "Menghantar…", // [Not in copy]
@@ -714,7 +714,7 @@ export const ms: Content = {
         // [CONFIRM at go-live] hosting region.
         body: "Dihoskan pada infrastruktur awan yang selamat di {{DATA_REGION}}, disulitkan semasa dihantar.",
       },
-      { lead: "Ada soalan?", body: "E-mel {{EMAIL}}." },
+      { lead: "Ada soalan?", body: "E-mel hello@quote-bird.com." },
     ],
   },
 
@@ -806,7 +806,7 @@ export const ms: Content = {
     lead: "Hubungi kami.",
     body: "Cara paling pantas untuk menghubungi kami ialah WhatsApp. Kami membalas dalam satu hari bekerja.",
     whatsapp: { label: "WhatsApp:", value: "{{WHATSAPP_NUMBER}}", button: "Sembang di WhatsApp" },
-    email: { label: "E-mel:", value: "{{EMAIL}}" },
+    email: { label: "E-mel:", value: "hello@quote-bird.com" },
     pilot: { label: "Mahu mencuba?", button: "Sertai pilot percuma" },
   },
 
@@ -820,7 +820,7 @@ export const ms: Content = {
     sections: [
       {
         heading: "1. Siapa kami.",
-        paras: ["Quotebird dikendalikan oleh {{OPERATOR_NAME}}, {{OPERATOR_ADDRESS}}. Hubungi: {{EMAIL}}."],
+        paras: ["Quotebird dikendalikan oleh {{OPERATOR_NAME}}, {{OPERATOR_ADDRESS}}. Hubungi: hello@quote-bird.com."],
       },
       {
         heading: "2. Apa yang kami kumpul.",
@@ -877,7 +877,7 @@ export const ms: Content = {
           "mengehadkan penggunaannya, contohnya untuk pemasaran",
           "meminta kami memindahkannya kepada anda dalam format yang boleh digunakan, jika diperuntukkan oleh undang-undang",
         ],
-        after: ["E-mel {{EMAIL}}. Kami akan membalas dalam tempoh yang dikehendaki oleh undang-undang."],
+        after: ["E-mel hello@quote-bird.com. Kami akan membalas dalam tempoh yang dikehendaki oleh undang-undang."],
       },
       {
         heading: "8. Keselamatan.",
@@ -948,6 +948,6 @@ export const ms: Content = {
       },
       { heading: "8. Undang-undang.", paras: ["Terma ini tertakluk kepada undang-undang Malaysia."] },
     ],
-    contact: "Hubungi: {{EMAIL}}.",
+    contact: "Hubungi: hello@quote-bird.com.",
   },
 };
