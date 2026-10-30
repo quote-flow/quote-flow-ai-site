@@ -787,7 +787,7 @@ export const en = {
     title: "Privacy policy",
     updated: "Last updated: {{DATE}}",
     intro: [
-      'This policy explains how {{OPERATOR_NAME}} ("Quotebird", "we") handles personal data collected through quotebird.ai and the Quotebird service. It is published in English and Bahasa Malaysia.',
+      'This policy explains how {{OPERATOR_NAME}} ("Quotebird", "we") handles personal data collected through quote-bird.com and the Quotebird service. It is published in English and Bahasa Malaysia.',
     ],
     sections: [
       {

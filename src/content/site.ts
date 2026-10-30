@@ -1,7 +1,7 @@
 // Site-wide values. Anything in {{DOUBLE_BRACES}} is not decided yet and is shown on the
 // page exactly as written, so it is easy to spot before launch.
 
-export const SITE_URL = "https://quotebird.ai";
+export const SITE_URL = "https://quote-bird.com";
 export const WHATSAPP_NUMBER = "{{WHATSAPP_NUMBER}}";
 export const EMAIL = "{{EMAIL}}";
 export const OPERATOR_NAME = "{{OPERATOR_NAME}}";
@@ -51,7 +51,7 @@ export const PLANS = [
 
 // The app that receives pilot sign-ups, and the public Turnstile site key.
 // Set at build time; see .env.example.
-export const APP_ORIGIN = process.env.NEXT_PUBLIC_APP_ORIGIN || "https://app.quotebird.ai";
+export const APP_ORIGIN = process.env.NEXT_PUBLIC_APP_ORIGIN || "https://app.quote-bird.com";
 export const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "TURNSTILE_SITE_KEY_PLACEHOLDER";
 
 // Version label of the privacy policy that pilot applicants agree to. Change it whenever

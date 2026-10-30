@@ -23,11 +23,11 @@ services:
         value: 22.23.2
       # The app that receives pilot sign-ups.
       - key: NEXT_PUBLIC_APP_ORIGIN
-        value: https://app.quotebird.ai
+        value: https://app.quote-bird.com
       # Real key from the Cloudflare account; until then sign-ups show "Sign-ups open soon".
       - key: NEXT_PUBLIC_TURNSTILE_SITE_KEY
         value: TURNSTILE_SITE_KEY_PLACEHOLDER
-      # Turn on once app.quotebird.ai is live; until then the pilot page shows a WhatsApp button.
+      # Turn on once app.quote-bird.com is live; until then the pilot page shows a WhatsApp button.
       - key: NEXT_PUBLIC_PILOT_FORM
         value: "off"
       # Cloudflare Web Analytics token; empty = analytics off.

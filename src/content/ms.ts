@@ -815,7 +815,7 @@ export const ms: Content = {
     title: "Dasar privasi",
     updated: "Kemas kini terakhir: {{DATE}}",
     intro: [
-      'Dasar ini menerangkan cara {{OPERATOR_NAME}} ("Quotebird", "kami") mengendalikan data peribadi yang dikumpul melalui quotebird.ai dan perkhidmatan Quotebird. Ia diterbitkan dalam Bahasa Inggeris dan Bahasa Malaysia.',
+      'Dasar ini menerangkan cara {{OPERATOR_NAME}} ("Quotebird", "kami") mengendalikan data peribadi yang dikumpul melalui quote-bird.com dan perkhidmatan Quotebird. Ia diterbitkan dalam Bahasa Inggeris dan Bahasa Malaysia.',
     ],
     sections: [
       {
